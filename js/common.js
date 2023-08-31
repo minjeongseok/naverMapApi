@@ -11,7 +11,10 @@ $(function(){
 
     // snb
     $(document).on("click", ".snb-list a", function(e) {
+
         e.stopPropagation();
+
+        // console.log($("body").hasClass("snb-min-mode"));
     
         $(this).parent('li').parent('ul').children('li').children('a').removeClass('active');
         
@@ -19,11 +22,11 @@ $(function(){
             $(this).parent('li').parent('ul').children('li').children('ul').slideUp($toggleSpeed);
             $(this).siblings('ul').slideDown($toggleSpeed);
             $(this).addClass('active');
-
         } else {
             $(this).siblings('ul').slideUp($toggleSpeed);
             $(this).removeClass('active');
         }
+
     });
 
 });
@@ -97,24 +100,25 @@ const disableDarkMode = () => {
 };
 
 if (darkMode === 'enabled') enableDarkMode();
+*/
 
 // SNB 토글, 값 저장
 let snbMode = localStorage.getItem('snbMode');
-const snbModeToggle = document.querySelector('#snbToggle');
+const snbToggleButton = document.querySelector('#snbToggleButton');
 
 const enableSnbMode = () => {
-    document.body.classList.add('snb-mini-mode');
+    document.body.classList.add('snb-min-mode');
     localStorage.setItem('snbMode', 'enabled');
 };
 
 const disableSnbMode = () => {
-    document.body.classList.remove('snb-mini-mode');
+    document.body.classList.remove('snb-min-mode');
     localStorage.setItem('snbMode', null);
 };
 
 if (snbMode === 'enabled') enableSnbMode();
 
-snbModeToggle.addEventListener('click', () => {
+snbToggleButton.addEventListener('click', () => {
     snbMode = localStorage.getItem('snbMode');
     if (snbMode !== 'enabled') {
         enableSnbMode();
@@ -122,7 +126,6 @@ snbModeToggle.addEventListener('click', () => {
         disableSnbMode();
     }
 });
-*/
 
 // 준비중 Alert
 function readyAlert() {
