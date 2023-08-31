@@ -4,17 +4,42 @@
         <img src="/images/symbol.svg" alt="상수도사업본부 유량통합관리시스템" class="symbol" />
     </a>
     <div class="user-card">
-        <div class="image">
-            <img src="/images/temp/profile.svg" alt="프로필 이미지" />
+        <div class="dropdown-button" data-dropdown-target="snb-user-setting-menu">
+            <div class="user-profile-img">
+                <img src="/images/temp/profile.svg" alt="사용자 이미지" />
+            </div>
         </div>
         <div class="info">
             <div>
                 <p class="name">김상수</p>
                 <p class="rank">시스템 관리자</p>
             </div>
-            <div class="dropdown">
-                <button type="button" class="button icon-button i--arrow-down dropdown-button"></button>
-                <div class="dropdown-content"></div>
+            <div class="dropdown" data-dropdown-id="snb-user-setting-menu" data-dropdown-position-x="left" data-dropdown-size="200">
+                <button type="button" class="button icon-button i--arrow-down dropdown-button" data-dropdown-target="snb-user-setting-menu"></button>
+                <div class="dropdown-content">
+                    <div class="dropdown-inner-button-group">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="/images/icon/account_outline.svg" alt="내 정보" />
+                                    <span>내 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="/images/icon/connection.svg" alt="접속현황" />
+                                    <span>접속현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="/images/icon/logout.svg" alt="로그아웃" />
+                                    <span>로그아웃</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

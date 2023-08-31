@@ -10,9 +10,7 @@ $(function(){
     var $toggleSpeed = 200;
 
     // snb
-    $(document).on("click", ".snb-list a", function(e) {
-
-        e.stopPropagation();
+    $(document).on("click", ".snb-list a", function() {
 
         // console.log($("body").hasClass("snb-min-mode"));
     
@@ -28,6 +26,59 @@ $(function(){
         }
 
     });
+
+    // 특정 영역 외 클릭시
+    $(document).on('click',function(e){
+
+        // dropdown
+        if($(e.target).parents(".dropdown").length < 1) {
+            $(".dropdown").removeClass("active");
+        }
+
+    });
+
+    // dropdown Toggle
+    $(document).on("click", ".dropdown-button", function(e) {
+
+        e.stopPropagation();
+
+        var dropdownID = $(this).data("dropdown-target");
+        var $dropdown = $(".dropdown[data-dropdown-id="+ dropdownID +"]");
+
+        if($dropdown.hasClass("active") == false) {
+            $(".dropdown").removeClass("active");
+            $dropdown.addClass("active");
+        } else {
+            $dropdown.removeClass("active");
+        }
+
+    });
+
+    // tooltip
+    $(document).on({
+        mouseenter: function() {
+
+            var tooltipText = $(this).data("tooltip");
+            var $tooltip = "<div class=\"tooltip\">" + tooltipText + "</div>";
+
+            $("body").append($tooltip);
+
+            var $tooltipDiv = $(".tooltip");
+
+            var posX = $(this).offset().left + $(this).outerWidth()/2;
+                posX = posX - $tooltipDiv.outerWidth()/2;
+
+            var posY = $(this).offset().top + $(this).outerHeight();
+
+            $tooltipDiv.css("left", posX);
+            $tooltipDiv.css("top", posY);
+            
+        },
+        mouseleave: function() {
+            $(".tooltip").remove();
+        }
+
+    }, "[data-tooltip]");
 
 });
 

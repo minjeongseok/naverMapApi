@@ -42,17 +42,123 @@
 				</button>
 			</div>
 			<div class="common-col-group">
-				<div class="dropdown">
-					<button type="button" class="button box hv-bg dropdown-button">
+				<div class="dropdown" data-dropdown-id="header-notification" data-dropdown-position-x="right" data-dropdown-size="300">
+					<button type="button" class="button box hv-bg dropdown-button" data-dropdown-target="header-notification">
 						<img src="/images/icon/notification_line.svg" alt="알림" class="icon" />
 					</button>
-					<div class="dropdown-content">알림 드랍다운 콘텐츠</div>
+					<div class="dropdown-content">
+						<div class="dropdown-content-head">
+							<div class="title-group">
+								<div class="flex-group gap-4">
+									<img src="/images/icon/notification_line.svg" alt="알림" class="title-icon" />
+									<p class="title">알림</p>
+								</div>
+							</div>
+							<div class="flex-group">
+								<button type="button" class="button box hv-bg" data-tooltip="알림 모두 읽음">
+									<img src="/images/icon/check.svg" alt="" class="icon" />
+								</button>
+								<button type="button" class="button box hv-bg" data-tooltip="읽은 알림 삭제">
+									<img src="/images/icon/delete.svg" alt="" class="icon" />
+								</button>
+							</div>
+						</div>
+						<div class="im-group">
+							<ul>
+								<li>
+									<div class="icon">
+										<img src="/images/icon/error_outline.svg" class="svg filter-error" />
+									</div>
+									<div class="msg">
+										<p class="fs-15 fw-500">에러 관련 타이틀</p>
+										<p class="fs-14 mt-4">에러 관련 텍스트</p>
+										<p class="fs-13 mt-6">1시간 전</p>
+									</div>
+								</li>
+								<li>
+									<div class="icon">
+										<img src="/images/icon/warning_outline.svg" class="svg filter-warning" />
+									</div>
+									<div class="msg">
+										<p class="fs-15 fw-500">경고 관련 타이틀</p>
+										<p class="fs-14 mt-4">경고 관련 텍스트</p>
+										<p class="fs-13 mt-6">1시간 전</p>
+									</div>
+								</li>
+								<li>
+									<div class="icon">
+										<img src="/images/icon/info_outline.svg" class="svg filter-info" />
+									</div>
+									<div class="msg">
+										<p class="fs-15 fw-500">안내 관련 타이틀</p>
+										<p class="fs-14 mt-4">안내 관련 텍스트</p>
+										<p class="fs-13 mt-6">1시간 전</p>
+									</div>
+								</li>
+								<li>
+									<div class="icon">
+										<img src="/images/icon/check_circle.svg" class="svg filter-success" />
+									</div>
+									<div class="msg">
+										<p class="fs-15 fw-500">성공 관련 타이틀</p>
+										<p class="fs-14 mt-4">성공 관련 텍스트</p>
+										<p class="fs-13 mt-6">1시간 전</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<div class="dropdown">
-					<button type="button" class="button box hv-bg dropdown-button">
+				<div class="dropdown" data-dropdown-id="header-message" data-dropdown-position-x="right" data-dropdown-size="300">
+					<button type="button" class="button box hv-bg dropdown-button" data-dropdown-target="header-message">
 						<img src="/images/icon/mail.svg" alt="메시지" class="icon" />
 					</button>
-					<div class="dropdown-content">메시지 드랍다운 콘텐츠</div>
+					<div class="dropdown-content">
+						<div class="dropdown-content-head">
+							<div class="title-group">
+								<div class="flex-group gap-4">
+									<img src="/images/icon/mail.svg" alt="메시지" class="title-icon" />
+									<p class="title">메시지</p>
+								</div>
+							</div>
+							<div class="flex-group">
+								<button type="button" class="button box hv-bg" data-tooltip="메시지 모두 읽음">
+									<img src="/images/icon/check.svg" alt="" class="icon" />
+								</button>
+								<button type="button" class="button box hv-bg" data-tooltip="읽은 메시지 삭제">
+									<img src="/images/icon/delete.svg" alt="" class="icon" />
+								</button>
+							</div>
+						</div>
+						<div class="im-group">
+							<ul>
+								<li>
+									<div class="icon">
+										<div class="user-profile-img">
+											<img src="/images/temp/profile.svg" />
+										</div>
+									</div>
+									<div class="msg">
+										<p class="fs-15 fw-500">메시지 제목</p>
+										<p class="fs-14 mt-4">메시지 내용</p>
+										<p class="fs-13 mt-6">1시간 전 · 보낸사람</p>
+									</div>
+								</li>
+								<li>
+									<div class="icon">
+										<div class="user-profile-img">
+											<img src="/images/temp/profile.svg" />
+										</div>
+									</div>
+									<div class="msg">
+										<p class="fs-15 fw-500">메시지 제목</p>
+										<p class="fs-14 mt-4">메시지 내용</p>
+										<p class="fs-13 mt-6">1시간 전 · 보낸사람</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 				<div class="dropdown">
 					<button type="button" class="button box hv-bg dropdown-button">
@@ -60,11 +166,36 @@
 					</button>
 					<div class="dropdown-content">환경설정 드랍다운 콘텐츠</div>
 				</div>
-				<div class="dropdown">
-					<button type="button" class="button box hv-bg dropdown-button">
-						<img src="/images/icon/account_outline.svg" alt="사용자설정" class="icon" />
+				<div class="dropdown" data-dropdown-id="header-user-setting-menu" data-dropdown-position-x="right" data-dropdown-size="200">
+					<button type="button" class="button box hv-bg dropdown-button" data-dropdown-target="header-user-setting-menu">
+						<div class="user-profile-img">
+							<img src="/images/temp/profile.svg" alt="사용자 이미지" />
+						</div>
 					</button>
-					<div class="dropdown-content">사용자설정 드랍다운 콘텐츠</div>
+					<div class="dropdown-content">
+						<div class="dropdown-inner-button-group">
+							<ul>
+								<li>
+									<a href="javascript:void(0)">
+										<img src="/images/icon/account_outline.svg" alt="내 정보" />
+										<span>내 정보</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<img src="/images/icon/connection.svg" alt="접속현황" />
+										<span>접속현황</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<img src="/images/icon/logout.svg" alt="로그아웃" />
+										<span>로그아웃</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
