@@ -24,6 +24,7 @@
   --header-size: 7.2rem;
   --icon-size: 2.4rem;
   --common-gap: 2.4rem;
+  --common-space: 2rem;
   --common-col-gap: .8rem;
   --box-shadow-color: #4473FC15;
   --box-shadow-hover-color: #4473FC30;
@@ -46,6 +47,37 @@ https://jakearchibald.github.io/svgomg
 https://yoksel.github.io/url-encoder
 https://codepen.io/sosuke/pen/Pjoqqp
 */
+.scrollbar {
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 12px;
+  background-color: var(--sb-track);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background-color: var(--sb-thumb);
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--sb-thumb-hover);
+}
+
+.scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: var(--sb-thumb-active);
+}
+
+.scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
+
 html {
   font-family: var(--font);
   font-size: var(--font-size);
@@ -354,15 +386,6 @@ body.snb-min-mode main {
           justify-content: space-between;
   gap: 1.2rem;
   border-bottom: 1px solid var(--border-light-color);
-}
-
-.dropdown .dropdown-content .dropdown-content-head .title-group .title {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.dropdown .dropdown-content .dropdown-content-head .title-group .title-icon {
-  font-size: 2.2rem;
 }
 
 .dropdown .dropdown-content .dropdown-content-head .button .icon {
@@ -772,6 +795,137 @@ body.snb-min-mode main {
   margin-top: 2rem;
 }
 
+.sidebar {
+  width: 36rem;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -36rem;
+  z-index: 100;
+  background-color: var(--box-color);
+  -webkit-box-shadow: -2px 0 10px var(--box-shadow-color);
+          box-shadow: -2px 0 10px var(--box-shadow-color);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: right var(--speed), opacity var(--speed);
+  transition: right var(--speed), opacity var(--speed);
+}
+
+.sidebar.active {
+  right: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar .sidebar-layer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000030;
+  z-index: -1;
+}
+
+.sidebar .sidebar-head {
+  width: 100%;
+  position: relative;
+  height: var(--header-size);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0 var(--common-col-gap);
+  padding: 0 var(--common-space);
+  border-bottom: 1px solid var(--border-light-color);
+  background-color: var(--box-color);
+}
+
+.sidebar .sidebar-body {
+  width: 100%;
+  position: relative;
+  height: calc(100% - var(--header-size));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--common-space);
+  background-color: var(--box-color);
+}
+
+.sidebar .sidebar-body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.sidebar .sidebar-body::-webkit-scrollbar-track {
+  border-radius: 12px;
+  background-color: var(--sb-track);
+}
+
+.sidebar .sidebar-body::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background-color: var(--sb-thumb);
+}
+
+.sidebar .sidebar-body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--sb-thumb-hover);
+}
+
+.sidebar .sidebar-body::-webkit-scrollbar-thumb:active {
+  background-color: var(--sb-thumb-active);
+}
+
+.sidebar .sidebar-body::-webkit-scrollbar-button {
+  display: none;
+}
+
+.title-group h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.title-group h3 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.title-group h4 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.title-group h5 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.title-group h6 {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.title-group p {
+  font-size: 1.5rem;
+  color: var(--text-light-color);
+}
+
+.title-group p ~ h2 {
+  margin-top: .2rem;
+}
+
+.title-group *.title {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.title-group .title-icon {
+  font-size: 2.2rem;
+}
+
 /* header */
 header {
   width: 100%;
@@ -1089,40 +1243,6 @@ main .main-wrap {
 main .main-wrap .main-head {
   width: 100%;
   position: relative;
-}
-
-main .main-wrap .main-head .title-group h2 {
-  font-size: 2.4rem;
-  font-weight: 700;
-}
-
-main .main-wrap .main-head .title-group h3 {
-  font-size: 2.2rem;
-  font-weight: 600;
-}
-
-main .main-wrap .main-head .title-group h4 {
-  font-size: 2rem;
-  font-weight: 500;
-}
-
-main .main-wrap .main-head .title-group h5 {
-  font-size: 1.8rem;
-  font-weight: 400;
-}
-
-main .main-wrap .main-head .title-group h6 {
-  font-size: 1.6rem;
-  font-weight: 300;
-}
-
-main .main-wrap .main-head .title-group p {
-  font-size: 1.5rem;
-  color: var(--text-light-color);
-}
-
-main .main-wrap .main-head .title-group p ~ h2 {
-  margin-top: .2rem;
 }
 
 main .main-wrap .main-body {

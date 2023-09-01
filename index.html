@@ -43,7 +43,7 @@
 			</div>
 			<div class="common-col-group">
 				<div class="dropdown" data-dropdown-id="header-notification" data-dropdown-position-x="right" data-dropdown-size="300">
-					<button type="button" class="button box hv-bg dropdown-button" data-dropdown-target="header-notification">
+					<button type="button" class="button box hv-bg dropdown-button" data-tooltip="알림" data-dropdown-target="header-notification">
 						<img src="/images/icon/notification_line.svg" alt="알림" class="icon" />
 					</button>
 					<div class="dropdown-content">
@@ -110,7 +110,7 @@
 					</div>
 				</div>
 				<div class="dropdown" data-dropdown-id="header-message" data-dropdown-position-x="right" data-dropdown-size="300">
-					<button type="button" class="button box hv-bg dropdown-button" data-dropdown-target="header-message">
+					<button type="button" class="button box hv-bg dropdown-button" data-tooltip="메시지" data-dropdown-target="header-message">
 						<img src="/images/icon/mail.svg" alt="메시지" class="icon" />
 					</button>
 					<div class="dropdown-content">
@@ -160,12 +160,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="dropdown">
-					<button type="button" class="button box hv-bg dropdown-button">
-						<img src="/images/icon/setting_cog.svg" alt="환경설정" class="icon" />
-					</button>
-					<div class="dropdown-content">환경설정 드랍다운 콘텐츠</div>
-				</div>
+				<button type="button" class="button box hv-bg" data-tooltip="환경설정" onclick="openSidebar('userSettingSidebar');">
+					<img src="/images/icon/setting_cog.svg" alt="환경설정" class="icon" />
+				</button>
 				<div class="dropdown" data-dropdown-id="header-user-setting-menu" data-dropdown-position-x="right" data-dropdown-size="200">
 					<button type="button" class="button box hv-bg dropdown-button" data-dropdown-target="header-user-setting-menu">
 						<div class="user-profile-img">
@@ -295,6 +292,27 @@
 	</main>
 	<!-- main end -->
 
+	<!-- userSettingSidebar -->
+	<aside id="userSettingSidebar" class="sidebar">
+		<button type="button" class="sidebar-layer" onclick="closeSidebar('userSettingSidebar');"></button>
+		<div class="sidebar-head">
+			<div class="title-group">
+				<div class="flex-group gap-4">
+					<img src="/images/icon/setting_cog.svg" alt="환경설정" class="title-icon" />
+					<h6 class="title">환경설정</h6>
+				</div>
+			</div>
+			<button type="button" class="button box hv-bg" onclick="closeSidebar('userSettingSidebar');">
+				<img src="/images/icon/close_round.svg" alt="환경설정 닫기" class="icon">
+			</button>
+		</div>
+		<div class="sidebar-body">
+			테마변경, 
+		</div>
+	</aside>
+	<!-- userSettingSidebar end -->
+
+	<!-- script -->
 	<script src="/js/common.js"></script>
 
 </body>

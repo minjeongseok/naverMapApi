@@ -2,11 +2,6 @@ $(function(){
 
     $(".snb").load("../snb.html");
 
-    // 리사이징시
-    $(window).on("resize", function() {
-        modalSizeSet();
-    });
-
     var $toggleSpeed = 200;
 
     // snb
@@ -99,8 +94,6 @@ function openModal(modalId) {
     modal.style.zIndex = modalHighestIdx++;
     modal.classList.add("active");
 
-    modalSizeSet();
-
     $("html, body").addClass("overflow-hidden");
 
 }
@@ -118,9 +111,26 @@ function closeModal(modalId) {
 
 }
 
-// 모달 사이즈 셋팅
-function modalSizeSet() {
-    $(".modal").css("height", $(window).outerHeight());
+// 사이드바 열기
+function openSidebar(sidebarID) {
+
+    var sidebar = document.getElementById(sidebarID);
+
+    sidebar.classList.add("active");
+
+    $("html, body").addClass("overflow-hidden");
+    
+}
+
+// 사이드바 닫기
+function closeSidebar(sidebarID) {
+
+    var sidebar = document.getElementById(sidebarID);
+
+    sidebar.classList.remove("active");
+
+    $("html, body").removeClass("overflow-hidden");
+
 }
 
 /*

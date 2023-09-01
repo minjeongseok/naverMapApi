@@ -54,7 +54,6 @@
     --tooltip-text-color: #fff;
     --tooltip-background-color: #4473FC;
 
-
     --speed: .2s;
 
     --logo-size: 16.5rem;
@@ -68,6 +67,7 @@
     --icon-size: 2.4rem;
 
     --common-gap: 2.4rem;
+    --common-space: 2rem;
     --common-col-gap: .8rem;
 
     --box-shadow-color: #4473FC15;
@@ -154,6 +154,10 @@ $iconActiveColor: 4473FC;
     &::-webkit-scrollbar-button { // 스크롤 바 상 하단 버튼
         display: none;
     }
+}
+
+.scrollbar {
+    @include scrollbar();
 }
 
 html {
@@ -461,17 +465,6 @@ body {
             gap: 1.2rem;
             border-bottom: 1px solid var(--border-light-color);
 
-            .title-group {
-                .title {
-                    font-size: 1.5rem;
-                    font-weight: 500;
-                }
-
-                .title-icon {
-                    font-size: 2.2rem;
-                }
-            }
-
             .button {
                 .icon {
                     width: 2.2rem;
@@ -737,6 +730,104 @@ body {
 .mt-19 {margin-top: 1.9rem;}
 .mt-20 {margin-top: 2rem;}
 
+.sidebar {
+    width: 36rem;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -36rem;
+    z-index: 100;
+    background-color: var(--box-color);
+    box-shadow: -2px 0 10px var(--box-shadow-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: right var(--speed), opacity var(--speed);
+
+    &.active {
+        right: 0;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar-layer {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #00000030;
+        z-index: -1;
+    }
+
+    .sidebar-head {
+        @include parent();
+        height: var(--header-size);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0 var(--common-col-gap);
+        padding: 0 var(--common-space);
+        border-bottom: 1px solid var(--border-light-color);
+        background-color: var(--box-color);
+    }
+
+    .sidebar-body {
+        @include parent();
+        height: calc(100% - var(--header-size));
+        overflow-y: auto;
+        @include scrollbar();
+        padding: var(--common-space);
+        background-color: var(--box-color);
+    }
+}
+
+.title-group {
+    h2 {
+        font-size: 2.4rem;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+
+    h4 {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    h5 {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+
+    h6 {
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: var(--text-light-color);
+
+        & ~ h2 {
+            margin-top: .2rem;
+        }
+    }
+
+    * {
+        &.title {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+    }
+
+    .title-icon {
+        font-size: 2.2rem;
+    }
+}
+
 /* header */
 header {
     width: 100%;
@@ -998,42 +1089,6 @@ main {
 
         .main-head {
             @include parent();
-
-            .title-group {
-                h2 {
-                    font-size: 2.4rem;
-                    font-weight: 700;
-                }
-    
-                h3 {
-                    font-size: 2.2rem;
-                    font-weight: 600;
-                }
-    
-                h4 {
-                    font-size: 2rem;
-                    font-weight: 500;
-                }
-    
-                h5 {
-                    font-size: 1.8rem;
-                    font-weight: 400;
-                }
-    
-                h6 {
-                    font-size: 1.6rem;
-                    font-weight: 300;
-                }
-    
-                p {
-                    font-size: 1.5rem;
-                    color: var(--text-light-color);
-    
-                    & ~ h2 {
-                        margin-top: .2rem;
-                    }
-                }
-            }
         }
 
         .main-body {
