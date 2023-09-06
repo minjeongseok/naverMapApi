@@ -2037,7 +2037,7 @@ body.snb-min-mode main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: var(--common-space);
+  gap: var(--common-col-gap) var(--common-space);
   margin-top: var(--common-space);
 }
 
@@ -2173,6 +2173,9 @@ body.snb-min-mode main {
 }
 
 .input-connect-group .input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   border-radius: 0 4px 4px 0;
 }
 
@@ -2252,6 +2255,9 @@ body.snb-min-mode main {
 }
 
 .select-labeled .select {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   border-radius: 0 4px 4px 0;
 }
 
@@ -2926,6 +2932,72 @@ main .main-wrap .main-body {
     border-top: 1px solid var(--border-light-color);
     -webkit-box-shadow: 0 0 12px 6px #00000020;
             box-shadow: 0 0 12px 6px #00000020;
+  }
+  .common-head-group {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .common-item-group {
+    width: 100%;
+  }
+  .common-item-group > * {
+    width: 100%;
+  }
+  .table-bottom-group > .button {
+    width: 100%;
+  }
+  .input-connect-group {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .input-connect-group .select {
+    width: 100%;
+    border-bottom-color: transparent;
+    border-right-color: var(--border-color);
+    border-radius: 4px 4px 0 0;
+  }
+  .input-connect-group .select:focus-within {
+    border-color: var(--primary-color);
+  }
+  .input-connect-group .input {
+    border-radius: 0 0 4px 4px;
+  }
+  .form .form-row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .form .form-row .label {
+    width: 100%;
+    min-width: auto;
+    min-height: auto;
+  }
+  .pagination {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pagination::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .pagination::-webkit-scrollbar-track {
+    border-radius: 12px;
+    background-color: var(--sb-track);
+  }
+  .pagination::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background-color: var(--sb-thumb);
+  }
+  .pagination::-webkit-scrollbar-thumb:hover {
+    background-color: var(--sb-thumb-hover);
+  }
+  .pagination::-webkit-scrollbar-thumb:active {
+    background-color: var(--sb-thumb-active);
+  }
+  .pagination::-webkit-scrollbar-button {
+    display: none;
   }
 }
 

@@ -1630,7 +1630,7 @@ body {
         @include parent();
         display: flex;
         align-items: flex-start;
-        gap: var(--common-space);
+        gap: var(--common-col-gap) var(--common-space);
         margin-top: var(--common-space);
 
         &:first-child {
@@ -1739,6 +1739,7 @@ body {
     }
     
     .input {
+        flex-grow: 1;
         border-radius: 0 4px 4px 0;
     }
 }
@@ -1803,6 +1804,7 @@ body {
     }
 
     .select {
+        flex-grow: 1;
         border-radius: 0 4px 4px 0;
 
         &:focus-within {
@@ -2419,6 +2421,62 @@ main {
                 box-shadow: 0 0 12px 6px #00000020;
             }
         }
+    }
+
+    .common-head-group {
+        align-items: flex-start;
+    }
+
+    .common-item-group {
+        width: 100%;
+        
+        > * {
+            width: 100%;
+        }
+    }
+
+    .table-bottom-group {
+        > .button {
+            width: 100%;
+        }
+    }
+
+    .input-connect-group {
+        flex-wrap: wrap;
+
+        .select {
+            width: 100%;
+            border-bottom-color: transparent;
+            border-right-color: var(--border-color);
+            border-radius: 4px 4px 0 0;
+
+            &:focus-within {
+                border-color: var(--primary-color);
+            }
+        }
+
+        .input {
+            border-radius: 0 0 4px 4px;
+        }
+    }
+
+    .form {
+        .form-row {
+            flex-wrap: wrap;
+
+            .label {
+                width: 100%;
+                min-width: auto;
+                min-height: auto;
+            }
+        }
+    }
+
+    .pagination {
+        margin-left: auto!important;
+        margin-right: auto!important;
+        overflow: auto;
+        @include scrollbar();
     }
 }
 /* media(max-width: 767px) end */
