@@ -1,22 +1,35 @@
+// common.js
+
 $(function(){
 
+    $("header").load("../header.html");
     $(".snb").load("../snb.html");
+    $("#userSettingPanel").load("../userSettingPanel.html");
 
-    var $toggleSpeed = 200;
+    // resize
+    $(window).on("resize", function() {
+        $(".js-remove-all").removeClass("active");
+    });
+
+    // scroll
+    $(window).on("scroll", function() {
+        $(".js-remove-all").removeClass("active");
+    });
+
+    // snb
+    var toggleSpeed = 200;
 
     // snb
     $(document).on("click", ".snb-list a", function() {
 
-        // console.log($("body").hasClass("snb-min-mode"));
-    
         $(this).parent('li').parent('ul').children('li').children('a').removeClass('active');
         
         if($(this).siblings('ul').css('display') == 'none') {
-            $(this).parent('li').parent('ul').children('li').children('ul').slideUp($toggleSpeed);
-            $(this).siblings('ul').slideDown($toggleSpeed);
+            $(this).parent('li').parent('ul').children('li').children('ul').slideUp(toggleSpeed);
+            $(this).siblings('ul').slideDown(toggleSpeed);
             $(this).addClass('active');
         } else {
-            $(this).siblings('ul').slideUp($toggleSpeed);
+            $(this).siblings('ul').slideUp(toggleSpeed);
             $(this).removeClass('active');
         }
 
@@ -37,8 +50,31 @@ $(function(){
 
         e.stopPropagation();
 
-        var dropdownID = $(this).data("dropdown-target");
-        var $dropdown = $(".dropdown[data-dropdown-id="+ dropdownID +"]");
+        var $this = $(this);
+        var $dropdown = $this.parent(".dropdown");
+        var $dropdownContent = $dropdown.find(".dropdown-content");
+
+        var dropdownId = $this.data("dropdown-target");
+        var dropdownSize = $dropdown.data("dropdown-size")
+
+        // 형제요소가 아닐 경우,
+        if(dropdownId != undefined) {
+            $dropdown = $(".dropdown[data-dropdown-id="+ dropdownId +"]");
+        }
+
+        // 사이즈 지정이 필요할 경우,
+        if(dropdownSize != undefined) {
+            $dropdownContent.css("width", dropdownSize);
+        }
+
+        if($dropdown.data("dropdown-position") == "fixed") {
+
+            var posX = $(this).offset().left + $(this).outerWidth() - $dropdownContent.outerWidth();
+            var posY = $(this).offset().top + $(this).outerHeight() - $(window).scrollTop();
+
+            $dropdownContent.css("left", posX);
+            $dropdownContent.css("top", posY);
+        }
 
         if($dropdown.hasClass("active") == false) {
             $(".dropdown").removeClass("active");
@@ -75,13 +111,37 @@ $(function(){
 
     }, "[data-tooltip]");
 
+    // checkbox 임시
+    $(document).on("click", ".checkbox", function() {
+
+        console.log("checkbox 임시 / checkbox id와 label for사용 권장");
+
+        var $this = $(this);
+        var $checkbox = $this.children("input[type='checkbox']")
+
+        var checkboxId = $checkbox.attr("id");
+
+        if(checkboxId == "" || checkboxId == undefined) {
+            if($checkbox.prop("checked") == false) {
+                $checkbox.prop("checked", true);
+            } else {
+                $checkbox.prop("checked", false);
+            }
+        }
+
+    });
+
+    $(document).on("click", "", function() {
+
+    });
+
 });
 
 // 모달 z-index 관리
 let modalHighestIdx = 0;
 
 // 모달 열기
-function openModal(modalId) {
+function openModal(modalID) {
 
     for(var i=0; i<$(".modal").length; i++) {
         if($(".modal").eq(i).css("z-index") > modalHighestIdx) {
@@ -89,7 +149,7 @@ function openModal(modalId) {
         }
     }
 
-    var modal = document.getElementById(modalId);
+    var modal = document.getElementById(modalID);
 
     modal.style.zIndex = modalHighestIdx++;
     modal.classList.add("active");
@@ -99,9 +159,9 @@ function openModal(modalId) {
 }
 
 // 모달 닫기
-function closeModal(modalId) {
+function closeModal(modalID) {
 
-    var modal = document.getElementById(modalId);
+    var modal = document.getElementById(modalID);
 
     modal.classList.remove("active");
 
@@ -131,64 +191,4 @@ function closeSidebar(sidebarID) {
 
     $("html, body").removeClass("overflow-hidden");
 
-}
-
-/*
-// 다크모드 토글, 값 저장
-let darkMode = localStorage.getItem('darkMode');
-
-const themeRadios = document.querySelectorAll("input[name='theme']");
-
-themeRadios.forEach((theme) => {
-    theme.addEventListener("change", (e) => {
-        if(theme.value == 'darkMode') {
-            enableDarkMode();
-        } else {
-            disableDarkMode();
-        }
-    });
-});
-
-const enableDarkMode = () => {
-    document.querySelector("html").classList.add('dark-mode');
-    localStorage.setItem('darkMode', 'enabled');
-    document.querySelector("#darkMode").checked = true;
-};
-
-const disableDarkMode = () => {
-    document.querySelector("html").classList.remove('dark-mode');
-    localStorage.setItem('darkMode', null);
-};
-
-if (darkMode === 'enabled') enableDarkMode();
-*/
-
-// SNB 토글, 값 저장
-let snbMode = localStorage.getItem('snbMode');
-const snbToggleButton = document.querySelector('#snbToggleButton');
-
-const enableSnbMode = () => {
-    document.body.classList.add('snb-min-mode');
-    localStorage.setItem('snbMode', 'enabled');
-};
-
-const disableSnbMode = () => {
-    document.body.classList.remove('snb-min-mode');
-    localStorage.setItem('snbMode', null);
-};
-
-if (snbMode === 'enabled') enableSnbMode();
-
-snbToggleButton.addEventListener('click', () => {
-    snbMode = localStorage.getItem('snbMode');
-    if (snbMode !== 'enabled') {
-        enableSnbMode();
-    } else {
-        disableSnbMode();
-    }
-});
-
-// 준비중 Alert
-function readyAlert() {
-    alert("준비중입니다.");
 }

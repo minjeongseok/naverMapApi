@@ -1,0 +1,162 @@
+<div class="header-wrap">
+    <div class="common-col-group">
+        <button type="button" id="snbToggleButton" class="button snb-toggle-button icon-button hv-bg box"></button>
+    </div>
+    <div class="common-col-group">
+        <div class="dropdown" data-dropdown-position-x="right" data-dropdown-size="300" data-dropdown-responsive="true">
+            <button type="button" class="button box hv-bg dropdown-button" data-tooltip="알림">
+                <img src="/images/icon/notification_line.svg" alt="알림" class="icon" />
+            </button>
+            <div class="dropdown-content">
+                <div class="dropdown-content-head">
+                    <div class="title-group">
+                        <div class="flex-group gap-4">
+                            <img src="/images/icon/notification_line.svg" alt="알림" class="title-icon" />
+                            <p class="title">알림</p>
+                        </div>
+                    </div>
+                    <div class="flex-group">
+                        <button type="button" class="button box hv-bg" data-tooltip="알림 모두 읽음">
+                            <img src="/images/icon/check.svg" alt="" class="icon" />
+                        </button>
+                        <button type="button" class="button box hv-bg" data-tooltip="읽은 알림 삭제">
+                            <img src="/images/icon/delete.svg" alt="" class="icon" />
+                        </button>
+                    </div>
+                </div>
+                <div class="im-group">
+                    <ul>
+                        <li>
+                            <div class="icon">
+                                <img src="/images/icon/error_outline.svg" class="svg filter-error" />
+                            </div>
+                            <div class="msg">
+                                <p class="fs-15 fw-500">에러 관련 타이틀</p>
+                                <p class="fs-14 mt-4">에러 관련 텍스트</p>
+                                <p class="fs-13 mt-6">1시간 전</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="/images/icon/warning_outline.svg" class="svg filter-warning" />
+                            </div>
+                            <div class="msg">
+                                <p class="fs-15 fw-500">경고 관련 타이틀</p>
+                                <p class="fs-14 mt-4">경고 관련 텍스트</p>
+                                <p class="fs-13 mt-6">1시간 전</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="/images/icon/info_outline.svg" class="svg filter-info" />
+                            </div>
+                            <div class="msg">
+                                <p class="fs-15 fw-500">안내 관련 타이틀</p>
+                                <p class="fs-14 mt-4">안내 관련 텍스트</p>
+                                <p class="fs-13 mt-6">1시간 전</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="/images/icon/check_circle.svg" class="svg filter-success" />
+                            </div>
+                            <div class="msg">
+                                <p class="fs-15 fw-500">성공 관련 타이틀</p>
+                                <p class="fs-14 mt-4">성공 관련 텍스트</p>
+                                <p class="fs-13 mt-6">1시간 전</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown" data-dropdown-position-x="right" data-dropdown-size="300" data-dropdown-responsive="true">
+            <button type="button" class="button box hv-bg dropdown-button" data-tooltip="메시지">
+                <img src="/images/icon/mail.svg" alt="메시지" class="icon" />
+            </button>
+            <div class="dropdown-content">
+                <div class="dropdown-content-head">
+                    <div class="title-group">
+                        <div class="flex-group gap-4">
+                            <img src="/images/icon/mail.svg" alt="메시지" class="title-icon" />
+                            <p class="title">메시지</p>
+                        </div>
+                    </div>
+                    <div class="flex-group">
+                        <button type="button" class="button box hv-bg" data-tooltip="메시지 모두 읽음">
+                            <img src="/images/icon/check.svg" alt="" class="icon" />
+                        </button>
+                        <button type="button" class="button box hv-bg" data-tooltip="읽은 메시지 삭제">
+                            <img src="/images/icon/delete.svg" alt="" class="icon" />
+                        </button>
+                    </div>
+                </div>
+                <div class="im-group">
+                    <ul>
+                        <li>
+                            <div class="icon">
+                                <div class="user-profile-img">
+                                    <img src="/images/temp/profile.svg" />
+                                </div>
+                            </div>
+                            <div class="msg">
+                                <p class="fs-15 fw-500">메시지 제목</p>
+                                <p class="fs-14 mt-4">메시지 내용</p>
+                                <p class="fs-13 mt-6">1시간 전 · 보낸사람</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <div class="user-profile-img">
+                                    <img src="/images/temp/profile.svg" />
+                                </div>
+                            </div>
+                            <div class="msg">
+                                <p class="fs-15 fw-500">메시지 제목</p>
+                                <p class="fs-14 mt-4">메시지 내용</p>
+                                <p class="fs-13 mt-6">1시간 전 · 보낸사람</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="button box hv-bg" data-tooltip="환경설정" onclick="openSidebar('userSettingPanel');">
+            <img src="/images/icon/setting_cog.svg" alt="환경설정" class="icon" />
+        </button>
+        <button type="button" id="themeChangeButton" class="button box hv-bg icon-button theme-change-button" data-tooltip="테마변경" onclick=""></button>
+        <div class="dropdown" data-dropdown-position-x="right" data-dropdown-size="200">
+            <button type="button" class="button box hv-bg dropdown-button">
+                <div class="user-profile-img">
+                    <img src="/images/temp/profile.svg" alt="사용자 이미지" />
+                </div>
+            </button>
+            <div class="dropdown-content">
+                <div class="dropdown-inner-button-group">
+                    <ul>
+                        <li>
+                            <button type="button" class="button box hv-bg">
+                                <img src="/images/icon/account_outline.svg" alt="내 정보" class="icon" />
+                                <span>내 정보</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="button box hv-bg">
+                                <img src="/images/icon/connection.svg" alt="접속현황" class="icon" />
+                                <span>접속현황</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="button box hv-bg">
+                                <img src="/images/icon/logout.svg" alt="로그아웃" class="icon" />
+                                <span>로그아웃</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/header.js"></script>

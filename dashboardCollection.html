@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ko">
+<head>
+
+	<title>상수도사업본부 유량통합관리시스템</title>
+
+	<meta charset="utf-8" />
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+
+	<meta property="og:url" content="url" />
+	<meta property="og:title" content="title" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="url" />
+	<meta property="og:description" content="description" />
+
+    <link rel="icon" href="/images/favicon/favicon_32.png" sizes="32x32" />
+	<link rel="icon" href="/images/favicon/favicon_64.png" sizes="64x64" />
+	<link rel="icon" href="/images/favicon/favicon_128.png" sizes="128x128" />
+	<link rel="icon" href="/images/favicon/favicon_152.png" sizes="152x152" />
+
+	<link href="/css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="/css/fonts.css" rel="stylesheet" type="text/css" />
+	<link href="/css/common.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+	<!-- header -->
+	<header></header>
+	<!-- header end -->
+
+	<!-- snb -->
+	<nav class="snb"></nav>
+	<!-- snb end -->
+
+	<!-- main -->
+	<main>
+		<div class="main-wrap">
+			<div class="main-head">
+				<div class="title-group">
+					<p>대시보드</p>
+					<h2>유량 수집현황</h2>
+				</div>
+			</div>
+			<div class="main-body">
+				<div class="card col-4">
+					<div class="card-head">
+						<div class="title-group">
+							<h6 class="title">순시/압력 현황</h6>
+						</div>
+					</div>
+					<div class="card-body">
+						<p class="fs-20 fw-700">2.382</p>
+						<div class="flex-group justify-space gap-6 mt-6">
+							<p class="fs-13 color-text-light">전월 대비</p>
+							<span class="badge badge-success">0.51%</span>
+						</div>
+					</div>
+				</div>
+				<div class="card col-4">
+					<div class="card-head">
+						<div class="title-group">
+							<h6 class="title">적산 현황</h6>
+						</div>
+					</div>
+					<div class="card-body">
+						<p class="fs-20 fw-700">14.212</p>
+						<div class="flex-group justify-space gap-6 mt-6">
+							<p class="fs-13 color-text-light">전주 대비</p>
+							<span class="badge badge-success">0.05%</span>
+						</div>
+					</div>
+				</div>
+				<div class="card col-4">
+					<div class="card-head">
+						<div class="title-group">
+							<h6 class="title">시/일/월보 현황</h6>
+						</div>
+					</div>
+					<div class="card-body">
+						<p class="fs-20 fw-700">51</p>
+						<div class="flex-group justify-space gap-6 mt-6">
+							<p class="fs-13 color-text-light">전주 대비</p>
+							<span class="badge badge-success">6.65%</span>
+						</div>
+					</div>
+				</div>
+				<div class="card col-4">
+					<div class="card-head">
+						<div class="title-group">
+							<h6 class="title">유수율 현황</h6>
+						</div>
+					</div>
+					<div class="card-body">
+						<p class="fs-20 fw-700">64</p>
+						<div class="flex-group justify-space gap-6 mt-6">
+							<p class="fs-13 color-text-light">전주 대비</p>
+							<span class="badge badge-danger">-0.01%</span>
+						</div>
+					</div>
+				</div>
+				<div class="card col-2">
+					<div class="card-head">
+						<div class="title-group">
+							<h6 class="title">유량계 현황</h6>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="chart-wrap" style="max-width: 30rem;">
+							<canvas id="chart_1" class="chart"></canvas>
+						</div>
+						<div class="table border-top mt-24">
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<div class="flex-group gap-6">
+												<span class="circle circle-success"></span>
+												<span>정상</span>
+												<span class="badge badge-success">+12%</span>
+											</div>
+										</td>
+										<td class="align-right">5,219</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="flex-group gap-6">
+												<span class="circle circle-warning"></span>
+												<span>배터리이상</span>
+												<span class="badge badge-warning">-3%</span>
+											</div>
+										</td>
+										<td class="align-right">105</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="flex-group gap-6">
+												<span class="circle circle-danger"></span>
+												<span>고장</span>
+												<span class="badge badge-danger">-3%</span>
+											</div>
+										</td>
+										<td class="align-right">217</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="card col-2">
+					<div class="card-head">
+						<div class="title-group">
+							<h6 class="title">유량계 통신 현황</h6>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="chart-wrap" style="max-width: 30rem;">
+							<canvas id="chart_2" class="chart"></canvas>
+						</div>
+						<div class="table border-top mt-24">
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<div class="flex-group gap-6">
+												<span class="circle circle-success"></span>
+												<span>정상</span>
+												<span class="badge badge-success">+12%</span>
+											</div>
+										</td>
+										<td class="align-right">4,306</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="flex-group gap-6">
+												<span class="circle circle-warning"></span>
+												<span>이상</span>
+												<span class="badge badge-warning">-3%</span>
+											</div>
+										</td>
+										<td class="align-right">3,801</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="flex-group gap-6">
+												<span class="circle circle-danger"></span>
+												<span>지연</span>
+												<span class="badge badge-danger">-3%</span>
+											</div>
+										</td>
+										<td class="align-right">1,689</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="flex-group gap-6">
+												<span class="circle circle-black"></span>
+												<span>불량</span>
+											</div>
+										</td>
+										<td class="align-right">3,251</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="card col-2">
+					<div class="card-head">
+						<div class="title-group">
+							<h6 class="title">최근 1주일간 수집 현황</h6>
+							<p class="mt-8">최근 1주일간 계량기, 중계기 등 검침 현황 정보입니다.</p>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="chart-wrap">
+							<canvas id="chart_3" class="chart"></canvas>
+						</div>
+					</div>
+				</div>
+				<div class="card col-2">
+					<div class="card-head">
+						<div class="title-group">
+							<h6 class="title">유량계별 수집 현황</h6>
+							<p class="mt-8">전체 수집데이터 중 시간대별 Top 5을 제공합니다.</p>
+						</div>
+					</div>
+					<div class="card-body">
+						<p class="fs-15 color-text-light">heatmap 영역</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- main end -->
+
+	<!-- userSettingPanel -->
+	<div id="userSettingPanel" class="sidebar"></div>
+	<!-- userSettingPanel end -->
+
+	<!-- script -->
+	<script src="/js/common.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+	<script src="/js/chartAssist.js"></script>
+
+	<script>
+
+		// 유량계 현황 차트
+		var chartArea_1 = document.getElementById('chart_1').getContext('2d');
+		var chart_1 = new Chart(chartArea_1, {
+			type: 'doughnut',
+			data: {
+				labels: ['정상', '배터리이상', '고장'],
+				datasets: [{
+					label: '유량계 현황',
+					data: [5219, 105, 217],
+					backgroundColor: [
+						chartColorPalette.green,
+						chartColorPalette.orange,
+						chartColorPalette.red,
+					],
+					borderColor: [
+						chartColorPalette.greenBorder,
+						chartColorPalette.orangeBorder,
+						chartColorPalette.redBorder,
+					],
+					borderWidth: 2,
+				}],
+			},
+			options: {
+				plugins: {
+					legend: false,
+				},
+			}
+		});
+
+		// 유량계 통신 현황 차트
+		var chartArea_2 = document.getElementById('chart_2').getContext('2d');
+		var chart_2 = new Chart(chartArea_2, {
+			type: 'doughnut',
+			data: {
+				labels: ['정상', '이상', '지연', '불량'],
+				datasets: [{
+					label: '유량계 통신 현황',
+					data: [4306, 3801, 1689, 3251],
+					backgroundColor: [
+						chartColorPalette.green,
+						chartColorPalette.orange,
+						chartColorPalette.red,
+						chartColorPalette.black,
+					],
+					borderColor: [
+						chartColorPalette.greenBorder,
+						chartColorPalette.orangeBorder,
+						chartColorPalette.redBorder,
+						chartColorPalette.blackBorder,
+					],
+					borderWidth: 2,
+				}],
+			},
+			options: {
+				plugins: {
+					legend: false,
+				},
+			}
+		});
+
+		// 최근 1주일간 수집 현황 차트
+		var chartArea_3 = document.getElementById('chart_3').getContext('2d');
+		var chart_3 = new Chart(chartArea_3, {
+			data: {
+				labels: ['09/01', '09/02', '09/03', '09/04', '09/05', '09/06', '09/07',],
+				datasets: [{
+					type: 'bar',
+					label: '수용가현황',
+					data: [23, 11, 22, 27, 13, 22, 37],
+					backgroundColor: [chartColorPalette.blue],
+					borderColor: [chartColorPalette.blueBorder],
+					borderWidth: 1,
+				}, {
+					type: 'line',
+					label: '통신현황',
+					data: [44, 55, 41, 67, 22, 43, 21],
+					backgroundColor: [chartColorPalette.green],
+					borderColor: [chartColorPalette.greenBorder],
+					borderWidth: 3,
+					pointRadius: 0,
+					fill: "start",
+					lineTension: .3,
+					pointRadius: 0,
+				}, {
+					type: 'line',
+					label: '사용량현황',
+					data: [30, 25, 36, 30, 45, 35, 64],
+					backgroundColor: [chartColorPalette.orange],
+					borderColor: [chartColorPalette.orangeBorder],
+					borderWidth: 3,
+					lineTension: .3,
+					pointRadius: 0,
+				}],
+			},
+			options: {
+				scales: {
+					x: {
+						ticks: {
+							font: {
+								size: 13,
+								family: chartFont
+							},
+							color: chartFontColor,
+						}
+					},
+					y: {
+						ticks: {
+							font: {
+								size: 13,
+								family: chartFont,
+							},
+							color: chartFontColor,
+						},
+						title: {
+							display: true,
+							text: "사용량(㎥)/수",
+							font: {
+								size: 13,
+								family: chartFont,
+							},
+							color: chartFontColor,
+						}
+					}
+				},
+				plugins: {
+					legend: {
+						position: "bottom",
+						labels: {
+							usePointStyle: true,
+							pointStyle: 'circle',
+							boxWidth: 10,
+							padding: 20,
+							font: {
+								size: 13,
+								family: chartFont,
+							},
+							color: chartFontColor,
+						},
+					},
+				},
+			}
+		});
+		
+		// 유량계별 수집 현황
+		var data = [{
+			z: [[1, 20, 30, 50, 1], [20, 1, 60, 80, 30], [30, 60, 1, -10, 20]],
+			x: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+			y: ['Morning', 'Afternoon', 'Evening'],
+			type: 'heatmap',
+		}];
+
+	</script>
+
+</body>
+</html>

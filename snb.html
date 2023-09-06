@@ -1,6 +1,12 @@
+<button class="common-layer snb-close-button"></button>
+<button class="button snb-close-button box hv-bg">
+    <img src="/images/icon/close_round.svg" class="icon" />
+</button>
+
 <div class="head">
     <a href="/index.html" class="logo">
         <img src="/images/logo.svg" alt="상수도사업본부 유량통합관리시스템" />
+        <img src="/images/dark_mode_logo.svg" alt="상수도사업본부 유량통합관리시스템" class="dark-mode-logo" />
         <img src="/images/symbol.svg" alt="상수도사업본부 유량통합관리시스템" class="symbol" />
     </a>
     <div class="user-card">
@@ -15,27 +21,27 @@
                 <p class="rank">시스템 관리자</p>
             </div>
             <div class="dropdown" data-dropdown-id="snb-user-setting-menu" data-dropdown-position-x="left" data-dropdown-size="200">
-                <button type="button" class="button icon-button i--arrow-down dropdown-button" data-dropdown-target="snb-user-setting-menu"></button>
+                <button type="button" class="button icon-button i--arrow-down dropdown-button"></button>
                 <div class="dropdown-content">
                     <div class="dropdown-inner-button-group">
                         <ul>
                             <li>
-                                <a href="javascript:void(0)">
-                                    <img src="/images/icon/account_outline.svg" alt="내 정보" />
+                                <button type="button" class="button box hv-bg">
+                                    <img src="/images/icon/account_outline.svg" alt="내 정보" class="icon" />
                                     <span>내 정보</span>
-                                </a>
+                                </button>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">
-                                    <img src="/images/icon/connection.svg" alt="접속현황" />
+                                <button type="button" class="button box hv-bg">
+                                    <img src="/images/icon/connection.svg" alt="접속현황" class="icon" />
                                     <span>접속현황</span>
-                                </a>
+                                </button>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">
-                                    <img src="/images/icon/logout.svg" alt="로그아웃" />
+                                <button type="button" class="button box hv-bg">
+                                    <img src="/images/icon/logout.svg" alt="로그아웃" class="icon" />
                                     <span>로그아웃</span>
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -53,10 +59,10 @@
             </a>
             <ul>
                 <li>
-                    <a href="/index.html">유량수집현황</a>
+                    <a href="/dashboardCollection.html">유량수집현황</a>
                 </li>
                 <li>
-                    <a href="/page2.html">유량분석현황</a>
+                    <a href="/dashboardAnalysis.html">유량분석현황</a>
                 </li>
             </ul>
         </li>
@@ -67,13 +73,13 @@
             </a>
             <ul>
                 <li>
-                    <a href="javascript:void(0)">유량계분포현황</a>
+                    <a href="/readingTerminal.html">유량계분포현황</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">실시간유량정보</a>
+                    <a href="/readingRealTimeInfo.html">실시간유량정보</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">블록별유량정보</a>
+                    <a href="/readingTotalUsage.html">블록별유량정보</a>
                 </li>
             </ul>
         </li>
@@ -84,16 +90,16 @@
             </a>
             <ul>
                 <li>
-                    <a href="javascript:void(0)">월별분석</a>
+                    <a href="/analysisUsage.html">월별분석</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">요일별분석</a>
+                    <a href="/analysisUsageDay.html">요일별분석</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">야간최저분석</a>
+                    <a href="/analysisUsageNight.html">야간최저분석</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">기간별분석</a>
+                    <a href="/analysisUsagePeriod.html">기간별분석</a>
                 </li>
             </ul>
         </li>
@@ -104,13 +110,13 @@
             </a>
             <ul>
                 <li>
-                    <a href="javascript:void(0)">유량계목록</a>
+                    <a href="/instrumentUsage.html">유량계목록</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">유량계이력정보</a>
+                    <a href="/instrumentHitory.html">유량계이력정보</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">유량계통신현황</a>
+                    <a href="/instrumentComm.html">유량계통신현황</a>
                 </li>
             </ul>
         </li>
@@ -121,10 +127,10 @@
             </a>
             <ul>
                 <li>
-                    <a href="javascript:void(0)">일일유량현황</a>
+                    <a href="/statisticsDailyStatus.html">일일유량현황</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">월유량현황</a>
+                    <a href="/statisticsMonthlyStatus.html">월유량현황</a>
                 </li>
             </ul>
         </li>
@@ -138,13 +144,13 @@
                     <a href="javascript:void(0)">사용자관리</a>
                     <ul>
                         <li>
-                            <a href="/page3.html">관리자관리</a>
+                            <a href="/systemUserManagerInfo.html">관리자관리</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">블록별담당자관리</a>
+                            <a href="/systemUserChargerInfo.html">블록별담당자관리</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">사용자관리</a>
+                            <a href="/systemUserMeterReader.html">사용자관리</a>
                         </li>
                     </ul>
                 </li>
@@ -152,21 +158,21 @@
                     <a href="javascript:void(0)">공통정보관리</a>
                     <ul>
                         <li>
-                            <a href="/page4.html">공통코드관리</a>
+                            <a href="/systemCommonCode.html">공통코드관리</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">유량계관리</a>
+                            <a href="/systemAdministrative.html">유량계관리</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">통계 현황</a>
+                    <a href="javascript:void(0)">통계현황</a>
                     <ul>
                         <li>
-                            <a href="javascript:void(0)">사용자접속현황</a>
+                            <a href="/statisticsUserInfo.html">사용자접속현황</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">유량계수집처리현황</a>
+                            <a href="/statisticsRegionalComparison.html">유량계 수집처리현황</a>
                         </li>
                     </ul>
                 </li>

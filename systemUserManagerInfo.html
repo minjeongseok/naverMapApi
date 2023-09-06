@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ko">
+<head>
+
+	<title>상수도사업본부 유량통합관리시스템</title>
+
+	<meta charset="utf-8" />
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+
+	<meta property="og:url" content="url" />
+	<meta property="og:title" content="title" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="url" />
+	<meta property="og:description" content="description" />
+
+    <link rel="icon" href="/images/favicon/favicon_32.png" sizes="32x32" />
+	<link rel="icon" href="/images/favicon/favicon_64.png" sizes="64x64" />
+	<link rel="icon" href="/images/favicon/favicon_128.png" sizes="128x128" />
+	<link rel="icon" href="/images/favicon/favicon_152.png" sizes="152x152" />
+
+	<link href="/css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="/css/fonts.css" rel="stylesheet" type="text/css" />
+	<link href="/css/common.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+	<!-- header -->
+	<header></header>
+	<!-- header end -->
+
+	<!-- snb -->
+	<nav class="snb"></nav>
+	<!-- snb end -->
+
+	<!-- main -->
+	<main>
+		<div class="main-wrap">
+			<div class="main-head">
+				<div class="title-group">
+					<p>시스템관리 · 사용자관리</p>
+					<h2>관리자 관리</h2>
+				</div>
+			</div>
+			<div class="main-body">
+				<div class="card col-1">
+					<div class="card-body">
+						<div class="common-head-group">
+							<div class="title-group">
+								<h6 class="title">조회결과 n건</h6>
+							</div>
+							<div class="common-item-group">
+								<div class="select">
+									<select name="" id="">
+										<option value="" selected>10개씩 보기</option>
+										<option value="">20개씩 보기</option>
+										<option value="">30개씩 보기</option>
+										<option value="">40개씩 보기</option>
+										<option value="">50개씩 보기</option>
+									</select>
+								</div>
+								<div class="select-labeled">
+									<label for="" class="label">소속</label>
+									<div class="select">
+										<select name="" id="">
+											<option value="" selected>전체</option>
+											<option value="">소속01</option>
+											<option value="">소속02</option>
+											<option value="">소속03</option>
+											<option value="">소속04</option>
+											<option value="">소속05</option>
+										</select>
+									</div>
+								</div>
+								<div class="select-labeled">
+									<label for="" class="label">직급</label>
+									<div class="select">
+										<select name="" id="">
+											<option value="" selected>전체</option>
+											<option value="">직급01</option>
+											<option value="">직급02</option>
+											<option value="">직급03</option>
+											<option value="">직급04</option>
+											<option value="">직급05</option>
+										</select>
+									</div>
+								</div>
+								<div class="input-connect-group">
+									<div class="select">
+										<select name="" id="">
+											<option value="" selected>ID</option>
+											<option value="">성명</option>
+											<option value="">업무</option>
+										</select>
+									</div>
+									<input type="text" class="input" placeholder="검색어를 입력하세요." />
+								</div>
+								<button type="button" class="button box border hv-bg" onclick="openModal('adminAddModal');">
+									<img src="/images/icon/add.svg" alt="등록" class="icon" /> 등록
+								</button>
+								<button type="button" class="button box border hv-bg">
+									<img src="/images/icon/search.svg" alt="조회" class="icon" /> 조회
+								</button>
+							</div>
+						</div>
+						<div class="table table-hover border border-right border-top">
+							<table>
+								<thead>
+									<tr>
+										<th class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</th>
+										<th>ID</th>
+										<th>성명</th>
+										<th>소속</th>
+										<th>직급</th>
+										<th>업무</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</td>
+										<td>admin</td>
+										<td>관리자</td>
+										<td>D01</td>
+										<td>주무관</td>
+										<td>가양배수 담당</td>
+										<td class="more-cell">
+											<div class="dropdown js-remove-all" data-dropdown-position="fixed" data-dropdown-size="180">
+												<button type="button" class="button box hv-bg dropdown-button">
+													<img src="/images/icon/dots.svg" alt="더보기" class="icon size-18" />
+												</button>
+												<div class="dropdown-content">
+													<div class="dropdown-inner-button-group">
+														<ul>
+															<li>
+																<button type="button" class="button box hv-bg">
+																	<img src="/images/icon/box_edit.svg" alt="수정" class="icon" />
+																	<span>수정</span>
+																</button>
+															</li>
+															<li>
+																<button type="button" class="button button-danger box hv-bg">
+																	<img src="/images/icon/delete.svg" alt="삭제" class="icon" />
+																	<span>삭제</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</td>
+										<td>admin</td>
+										<td>관리자</td>
+										<td>D01</td>
+										<td>주무관</td>
+										<td>가양배수 담당</td>
+										<td class="more-cell">
+											<div class="dropdown js-remove-all" data-dropdown-position="fixed" data-dropdown-size="180">
+												<button type="button" class="button box hv-bg dropdown-button">
+													<img src="/images/icon/dots.svg" alt="더보기" class="icon size-18" />
+												</button>
+												<div class="dropdown-content">
+													<div class="dropdown-inner-button-group">
+														<ul>
+															<li>
+																<button type="button" class="button box hv-bg">
+																	<img src="/images/icon/box_edit.svg" alt="수정" class="icon" />
+																	<span>수정</span>
+																</button>
+															</li>
+															<li>
+																<button type="button" class="button button-danger box hv-bg">
+																	<img src="/images/icon/delete.svg" alt="삭제" class="icon" />
+																	<span>삭제</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</td>
+										<td>admin</td>
+										<td>관리자</td>
+										<td>D01</td>
+										<td>주무관</td>
+										<td>가양배수 담당</td>
+										<td class="more-cell">
+											<div class="dropdown js-remove-all" data-dropdown-position="fixed" data-dropdown-size="180">
+												<button type="button" class="button box hv-bg dropdown-button">
+													<img src="/images/icon/dots.svg" alt="더보기" class="icon size-18" />
+												</button>
+												<div class="dropdown-content">
+													<div class="dropdown-inner-button-group">
+														<ul>
+															<li>
+																<button type="button" class="button box hv-bg">
+																	<img src="/images/icon/box_edit.svg" alt="수정" class="icon" />
+																	<span>수정</span>
+																</button>
+															</li>
+															<li>
+																<button type="button" class="button button-danger box hv-bg">
+																	<img src="/images/icon/delete.svg" alt="삭제" class="icon" />
+																	<span>삭제</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</td>
+										<td>admin</td>
+										<td>관리자</td>
+										<td>D01</td>
+										<td>주무관</td>
+										<td>가양배수 담당</td>
+										<td class="more-cell">
+											<div class="dropdown js-remove-all" data-dropdown-position="fixed" data-dropdown-size="180">
+												<button type="button" class="button box hv-bg dropdown-button">
+													<img src="/images/icon/dots.svg" alt="더보기" class="icon size-18" />
+												</button>
+												<div class="dropdown-content">
+													<div class="dropdown-inner-button-group">
+														<ul>
+															<li>
+																<button type="button" class="button box hv-bg">
+																	<img src="/images/icon/box_edit.svg" alt="수정" class="icon" />
+																	<span>수정</span>
+																</button>
+															</li>
+															<li>
+																<button type="button" class="button button-danger box hv-bg">
+																	<img src="/images/icon/delete.svg" alt="삭제" class="icon" />
+																	<span>삭제</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</td>
+										<td>admin</td>
+										<td>관리자</td>
+										<td>D01</td>
+										<td>주무관</td>
+										<td>가양배수 담당</td>
+										<td class="more-cell">
+											<div class="dropdown js-remove-all" data-dropdown-position="fixed" data-dropdown-size="180">
+												<button type="button" class="button box hv-bg dropdown-button">
+													<img src="/images/icon/dots.svg" alt="더보기" class="icon size-18" />
+												</button>
+												<div class="dropdown-content">
+													<div class="dropdown-inner-button-group">
+														<ul>
+															<li>
+																<button type="button" class="button box hv-bg">
+																	<img src="/images/icon/box_edit.svg" alt="수정" class="icon" />
+																	<span>수정</span>
+																</button>
+															</li>
+															<li>
+																<button type="button" class="button button-danger box hv-bg">
+																	<img src="/images/icon/delete.svg" alt="삭제" class="icon" />
+																	<span>삭제</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</td>
+										<td>admin</td>
+										<td>관리자</td>
+										<td>D01</td>
+										<td>주무관</td>
+										<td>가양배수 담당</td>
+										<td class="more-cell">
+											<div class="dropdown js-remove-all" data-dropdown-position="fixed" data-dropdown-size="180">
+												<button type="button" class="button box hv-bg dropdown-button">
+													<img src="/images/icon/dots.svg" alt="더보기" class="icon size-18" />
+												</button>
+												<div class="dropdown-content">
+													<div class="dropdown-inner-button-group">
+														<ul>
+															<li>
+																<button type="button" class="button box hv-bg">
+																	<img src="/images/icon/box_edit.svg" alt="수정" class="icon" />
+																	<span>수정</span>
+																</button>
+															</li>
+															<li>
+																<button type="button" class="button button-danger box hv-bg">
+																	<img src="/images/icon/delete.svg" alt="삭제" class="icon" />
+																	<span>삭제</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</td>
+										<td>admin</td>
+										<td>관리자</td>
+										<td>D01</td>
+										<td>주무관</td>
+										<td>가양배수 담당</td>
+										<td class="more-cell">
+											<div class="dropdown js-remove-all" data-dropdown-position="fixed" data-dropdown-size="180">
+												<button type="button" class="button box hv-bg dropdown-button">
+													<img src="/images/icon/dots.svg" alt="더보기" class="icon size-18" />
+												</button>
+												<div class="dropdown-content">
+													<div class="dropdown-inner-button-group">
+														<ul>
+															<li>
+																<button type="button" class="button box hv-bg">
+																	<img src="/images/icon/box_edit.svg" alt="수정" class="icon" />
+																	<span>수정</span>
+																</button>
+															</li>
+															<li>
+																<button type="button" class="button button-danger box hv-bg">
+																	<img src="/images/icon/delete.svg" alt="삭제" class="icon" />
+																	<span>삭제</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</td>
+										<td>admin</td>
+										<td>관리자</td>
+										<td>D01</td>
+										<td>주무관</td>
+										<td>가양배수 담당</td>
+										<td class="more-cell">
+											<div class="dropdown js-remove-all" data-dropdown-position="fixed" data-dropdown-size="180">
+												<button type="button" class="button box hv-bg dropdown-button">
+													<img src="/images/icon/dots.svg" alt="더보기" class="icon size-18" />
+												</button>
+												<div class="dropdown-content">
+													<div class="dropdown-inner-button-group">
+														<ul>
+															<li>
+																<button type="button" class="button box hv-bg">
+																	<img src="/images/icon/box_edit.svg" alt="수정" class="icon" />
+																	<span>수정</span>
+																</button>
+															</li>
+															<li>
+																<button type="button" class="button button-danger box hv-bg">
+																	<img src="/images/icon/delete.svg" alt="삭제" class="icon" />
+																	<span>삭제</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</td>
+										<td>admin</td>
+										<td>관리자</td>
+										<td>D01</td>
+										<td>주무관</td>
+										<td>가양배수 담당</td>
+										<td class="more-cell">
+											<div class="dropdown js-remove-all" data-dropdown-position="fixed" data-dropdown-size="180">
+												<button type="button" class="button box hv-bg dropdown-button">
+													<img src="/images/icon/dots.svg" alt="더보기" class="icon size-18" />
+												</button>
+												<div class="dropdown-content">
+													<div class="dropdown-inner-button-group">
+														<ul>
+															<li>
+																<button type="button" class="button box hv-bg">
+																	<img src="/images/icon/box_edit.svg" alt="수정" class="icon" />
+																	<span>수정</span>
+																</button>
+															</li>
+															<li>
+																<button type="button" class="button button-danger box hv-bg">
+																	<img src="/images/icon/delete.svg" alt="삭제" class="icon" />
+																	<span>삭제</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox-cell">
+											<div class="checkbox">
+												<input type="checkbox" id="" />
+												<label for=""></label>
+											</div>
+										</td>
+										<td>admin</td>
+										<td>관리자</td>
+										<td>D01</td>
+										<td>주무관</td>
+										<td>가양배수 담당</td>
+										<td class="more-cell">
+											<div class="dropdown js-remove-all" data-dropdown-position="fixed" data-dropdown-size="180">
+												<button type="button" class="button box hv-bg dropdown-button">
+													<img src="/images/icon/dots.svg" alt="더보기" class="icon size-18" />
+												</button>
+												<div class="dropdown-content">
+													<div class="dropdown-inner-button-group">
+														<ul>
+															<li>
+																<button type="button" class="button box hv-bg">
+																	<img src="/images/icon/box_edit.svg" alt="수정" class="icon" />
+																	<span>수정</span>
+																</button>
+															</li>
+															<li>
+																<button type="button" class="button button-danger box hv-bg">
+																	<img src="/images/icon/delete.svg" alt="삭제" class="icon" />
+																	<span>삭제</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="table-bottom-group">
+							<button type="button" class="button button-danger box border hv-bg">
+								<img src="/images/icon/delete.svg" alt="선택목록삭제" class="icon" /> 선택목록삭제
+							</button>
+							<div class="pagination right">
+								<button type="button" class="prev" data-label="이전"></button>
+								<div>
+									<button type="button" class="active">1</button>
+									<button type="button">2</button>
+									<button type="button">3</button>
+									<button type="button">4</button>
+									<button type="button">5</button>
+								</div>
+								<button type="button" class="next" data-label="다음"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- main end -->
+
+	<!-- userSettingPanel -->
+	<div id="userSettingPanel" class="sidebar"></div>
+	<!-- userSettingPanel end -->
+
+	<!-- adminAddModal / 관리자 등록 모달 -->
+	<div id="adminAddModal" class="modal">
+		<button type="button" class="common-layer" onclick="closeModal('adminAddModal');"></button>
+		<div class="modal-inner">
+			<div class="modal-head">
+				<div class="title-group">
+					<div class="flex-group gap-4">
+						<img src="/images/icon/add.svg" class="title-icon" />
+						<h6 class="title">관리자 등록</h6>
+					</div>
+				</div>
+				<button type="button" class="button box hv-bg" onclick="closeModal('adminAddModal');">
+					<img src="/images/icon/close_round.svg" alt="관리자 등록 닫기" class="icon" />
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form">
+					<div class="form-row">
+						<label for="" class="label">아이디</label>
+						<input type="text" class="input" placeholder="아이디를 입력하세요." />
+					</div>
+					<div class="form-row">
+						<label for="" class="label">비밀번호</label>
+						<input type="text" class="input" placeholder="비밀번호를 입력하세요." />
+					</div>
+					<div class="form-row">
+						<label for="" class="label">비밀번호 확인</label>
+						<input type="text" class="input" placeholder="비밀번호를 한번 더 입력하세요." />
+					</div>
+					<div class="form-row">
+						<label for="" class="label">소속</label>
+						<div class="select">
+						<select name="" id="">
+							<option value="" selected>소속을 선택해주세요.</option>
+							<option value="">소속01</option>
+							<option value="">소속02</option>
+							<option value="">소속03</option>
+							<option value="">소속04</option>
+							<option value="">소속05</option>
+						</select>
+						</div>
+					</div>
+					<div class="form-row">
+						<label for="" class="label">직급</label>
+						<div class="select">
+						<select name="" id="">
+							<option value="" selected>직급을 선택해주세요.</option>
+							<option value="">직급01</option>
+							<option value="">직급02</option>
+							<option value="">직급03</option>
+							<option value="">직급04</option>
+							<option value="">직급05</option>
+						</select>
+						</div>
+					</div>
+					<div class="form-row">
+						<label for="" class="label">업무</label>
+						<div class="textarea">
+							<textarea name="" id="" placeholder="업무내용을 입력하세요."></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-button-group">
+				<button type="button" class="button color-text-light hover-color-close hover-background-close" onclick="closeModal('adminAddModal');">취소</button>
+				<button type="button" class="button color-text-light hover-color-apply hover-background-apply">등록</button>
+			</div>
+		</div>
+	</div>
+	<!-- adminAddModal / 관리자 등록 모달 end -->
+
+	<!-- script -->
+	<script src="/js/common.js"></script>
+
+</body>
+</html>
