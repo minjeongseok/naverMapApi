@@ -624,6 +624,8 @@
 		// 탭 클릭
 		function viewLoad(tabIndex, fileName) {
 
+			$("body").addClass("loading");
+
 			$("#list").hide();
 
 			$("#tab").show();
@@ -631,7 +633,14 @@
 			$("#tab").children(".button").eq(tabIndex).addClass("active");
 
 			$("#view").show();
-			$("#view").load(fileName);
+
+			$("#view").load(fileName, function(responseTxt, statusTxt) {
+				if(statusTxt == "error") {
+					alert("오류가 발생하였습니다.");
+				}
+			});
+
+			$("body").removeClass("loading");
 
 		}
 
