@@ -635,12 +635,14 @@
 			$("#view").show();
 
 			$("#view").load(fileName, function(responseTxt, statusTxt) {
+
 				if(statusTxt == "error") {
 					alert("오류가 발생하였습니다.");
 				}
-			});
 
-			$("body").removeClass("loading");
+				$("body").removeClass("loading");
+				
+			});
 
 		}
 
