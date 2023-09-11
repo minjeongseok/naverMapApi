@@ -1,0 +1,280 @@
+<!-- 유량관리 > 블록별유량정보 > 유수율 현황 -->
+
+<div class="card col-2">
+	<div class="card-body">
+		<div class="card-body">
+			<div class="common-head-group">
+				<div class="parent title-group">
+					<div class="flex-group justify-space gap-6">
+						<h6 class="title">유량 수신 정보</h6>
+						<span class="badge badge-success">일반블록</span>
+					</div>
+				</div>
+			</div>
+			<div class="table table-responsive border border-right border-top mt-16">
+				<table>
+					<thead>
+						<tr>
+							<th>블록명</th>
+							<th>위치</th>
+							<th>지역</th>
+							<th>누수유량(㎥/월)</th>
+							<th>순시유량(㎥/h)</th>
+							<th>압력(kgf/㎠)</th>
+							<th>적산(㎥)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="블록명">D01(-)</td>
+							<td data-label="위치">동구 용전동 12-35</td>
+							<td data-label="지역">동구</td>
+							<td data-label="누수유량(㎥/월)">0</td>
+							<td data-label="순시유량(㎥/h)">31.1</td>
+							<td data-label="압력(kgf/㎠)">3.04</td>
+							<td data-label="적산(㎥)">1,365,744</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="card col-2">
+	<div class="card-body">
+		<div class="card-body">
+			<div class="common-head-group">
+				<div class="parent title-group">
+					<div class="flex-group justify-space gap-6">
+						<h6 class="title">유량 수신 현황</h6>
+						<span class="badge badge-success">2023.07.13 기준</span>
+					</div>
+				</div>
+			</div>
+			<div class="table table-responsive border border-right border-top mt-16">
+				<table>
+					<thead>
+						<tr>
+							<th>최신 수신시간</th>
+							<th>유량계 정보</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="최신 수신시간">2023.07.13 09:50:42</td>
+							<td data-label="유량계 정보">전자식 / MAG6000 / 관 200mm / 유 200mm</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="card col-1">
+	<div class="card-body">
+		<div class="common-head-group">
+			<div class="common-item-group">
+				<div class="select-labeled">
+					<label for="" class="label">시작 기준</label>
+					<div class="select select-time">
+						<select name="" id="">
+							<option value="" selected="">2023년</option>
+							<option value="">2022년</option>
+							<option value="">2021년</option>
+							<option value="">2020년</option>
+							<option value="">2019년</option>
+							<option value="">2018년</option>
+							<option value="">2017년</option>
+							<option value="">2016년</option>
+							<option value="">2015년</option>
+							<option value="">2014년</option>
+							<option value="">2013년</option>
+							<option value="">2012년</option>
+							<option value="">2011년</option>
+							<option value="">2010년</option>
+						</select>
+					</div>
+					<div class="select select-time">
+						<select name="" id="">
+							<option value="" selected="">1월</option>
+							<option value="">2월</option>
+							<option value="">3월</option>
+							<option value="">4월</option>
+							<option value="">5월</option>
+							<option value="">6월</option>
+							<option value="">7월</option>
+							<option value="">8월</option>
+							<option value="">9월</option>
+							<option value="">10월</option>
+							<option value="">11월</option>
+							<option value="">12월</option>
+						</select>
+					</div>
+				</div>
+				<div class="select-labeled">
+					<label for="" class="label">종료 기준</label>
+					<div class="select select-time">
+						<select name="" id="">
+							<option value="" selected="">2023년</option>
+							<option value="">2022년</option>
+							<option value="">2021년</option>
+							<option value="">2020년</option>
+							<option value="">2019년</option>
+							<option value="">2018년</option>
+							<option value="">2017년</option>
+							<option value="">2016년</option>
+							<option value="">2015년</option>
+							<option value="">2014년</option>
+							<option value="">2013년</option>
+							<option value="">2012년</option>
+							<option value="">2011년</option>
+							<option value="">2010년</option>
+						</select>
+					</div>
+					<div class="select select-time">
+						<select name="" id="">
+							<option value="" selected="">1월</option>
+							<option value="">2월</option>
+							<option value="">3월</option>
+							<option value="">4월</option>
+							<option value="">5월</option>
+							<option value="">6월</option>
+							<option value="">7월</option>
+							<option value="">8월</option>
+							<option value="">9월</option>
+							<option value="">10월</option>
+							<option value="">11월</option>
+							<option value="">12월</option>
+						</select>
+					</div>
+				</div>
+				<button type="button" class="button box border hv-bg">
+					<img src="/images/icon/excel.svg" alt="엑셀저장" class="icon filter-none" /> 엑셀저장
+				</button>
+				<button type="button" class="button box border hv-bg">
+					<img src="/images/icon/save_alt.svg" alt="구역검침부 저장" class="icon" /> 구역검침부
+				</button>
+				<button type="button" class="button box border hv-bg" onclick="resetZoom();">
+					<img src="/images/icon/reset.svg" alt="차트 새로고침" class="icon" /> 차트 새로고침
+				</button>
+				<button type="button" class="button box border hv-bg">
+					<img src="/images/icon/search.svg" alt="조회" class="icon" /> 조회
+				</button>
+			</div>
+		</div>
+		<div class="chart-wrap">
+			<canvas id="myChart" class="chart"></canvas>
+		</div>
+		<div class="table table-hover border border-right border-top mt-24">
+			<table>
+				<thead>
+					<tr>
+						<th class="sort asc">기준년도</th>
+						<th class="sort desc">월</th>
+						<th class="sort">월 유입량</th>
+						<th class="sort">월 부과량</th>
+						<th class="sort">차이</th>
+						<th class="sort">월 유수율(%)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2023</td>
+						<td>01</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<script src="/js/datepicker.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.0.0/chartjs-plugin-zoom.min.js"></script>
+<script src="/js/chartAssist.js"></script>
+
+<script>
+
+	var chartArea = document.getElementById('myChart').getContext('2d');
+	var myChart = new Chart(chartArea, {
+		data: {
+			labels: ["2023.01", "2023.02", "2023.03", "2023.04", "2023.05", "2023.06", "2023.07", "2023.08"],
+			datasets: [{
+				type: 'line',
+				label: '월 유수율',
+				data: [1, 2, 3, 4, 5, 6, 7, 8],
+				borderColor: [chartColorPalette.blueBorder],
+				backgroundColor: [chartColorPalette.blue],
+				borderWidth: 1,
+				pointRadius: 0,
+				fill: "start",
+				lineTension: .3,
+				pointRadius: 0,
+			}],
+		},
+		options: {
+			scales: {
+				x: {
+					ticks: {
+						beginAtZero: true,
+						font: {
+							size: 13,
+							family: chartFont,
+						},
+						color: chartFontColor,
+					},
+				},
+				y: {
+					ticks: {
+						beginAtZero: true,
+						font: {
+							size: 13,
+							family: chartFont,
+						},
+						color: chartFontColor,
+					},
+				}
+			},
+			plugins: {
+				legend: {
+					position: "bottom",
+					labels: {
+						usePointStyle: true,
+						pointStyle: 'circle',
+						boxWidth: 10,
+						padding: 20,
+						font: {
+							size: 13,
+							family: chartFont,
+						},
+						color: chartFontColor,
+					},
+				},
+				zoom: {
+					zoom: {
+						wheel: {
+							enabled: true
+						},
+						pinch: {
+							enabled: true
+						},
+						mode: "xy"
+					},
+					pan: {
+						enabled: true
+					}
+				},
+			},
+		},
+	});
+
+	function resetZoom() {
+		window.myChart.resetZoom();
+	}
+
+</script>

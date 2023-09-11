@@ -77,7 +77,7 @@ function inputYMDNumber(obj) {
 // date picker click
 $(function(){
 
-    $('.datepicker').datepicker();
+    $(".datepicker").datepicker();
 
     // window resize > date picker hide
     $(window).on('resize',function(e) {

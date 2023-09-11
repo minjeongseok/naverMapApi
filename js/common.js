@@ -2,6 +2,7 @@
 
 $(function(){
 
+    // load
     $("header").load("../header.html");
     $(".snb").load("../snb.html");
     $("#userSettingPanel").load("../userSettingPanel.html");
@@ -13,6 +14,11 @@ $(function(){
 
     // scroll
     $(window).on("scroll", function() {
+        $(".js-remove-all").removeClass("active");
+    });
+
+    // table scroll
+    $(".table").on("scroll", function() {
         $(".js-remove-all").removeClass("active");
     });
 
@@ -67,13 +73,20 @@ $(function(){
             $dropdownContent.css("width", dropdownSize);
         }
 
+        // fixed 요소로 활용할 경우,
         if($dropdown.data("dropdown-position") == "fixed") {
 
             var posX = $(this).offset().left + $(this).outerWidth() - $dropdownContent.outerWidth();
             var posY = $(this).offset().top + $(this).outerHeight() - $(window).scrollTop();
 
+            // 좌측 화면 밖으로 넘어갈때 위치 재지정
+            if(Math.sign(posX) == -1) {
+                posX = posX + $dropdownContent.outerWidth() - $(this).outerWidth();
+            }
+
             $dropdownContent.css("left", posX);
             $dropdownContent.css("top", posY);
+
         }
 
         if($dropdown.hasClass("active") == false) {

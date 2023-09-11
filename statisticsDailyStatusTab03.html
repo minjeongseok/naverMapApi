@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+
+	<title>상수도사업본부 유량통합관리시스템</title>
+
+	<meta charset="utf-8" />
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+
+	<meta property="og:url" content="https://flowunity.netlify.app" />
+	<meta property="og:title" content="상수도사업본부 유량통합관리시스템" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://flowunity.netlify.app/images/og_img.png" />
+	<meta property="og:description" content="상수도사업본부 유량통합관리시스템" />
+
+    <link rel="icon" href="/images/favicon/favicon_32.png" sizes="32x32" />
+	<link rel="icon" href="/images/favicon/favicon_64.png" sizes="64x64" />
+	<link rel="icon" href="/images/favicon/favicon_128.png" sizes="128x128" />
+	<link rel="icon" href="/images/favicon/favicon_152.png" sizes="152x152" />
+
+	<link href="/css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="/css/fonts.css" rel="stylesheet" type="text/css" />
+	<link href="/css/datepicker.css" rel="stylesheet" type="text/css" />
+	<link href="/css/common.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+	<!-- header -->
+	<header></header>
+	<!-- header end -->
+
+	<!-- snb -->
+	<nav class="snb"></nav>
+	<!-- snb end -->
+
+	<!-- main -->
+	<main>
+		<div class="main-wrap">
+			<div class="main-head">
+				<div class="title-group">
+					<p>현황관리</p>
+					<h2>일일 유량현황</h2>
+				</div>
+				<div id="tab" class="tab mt-24">
+					<a href="/statisticsDailyStatusTab01.html" class="button">일일 현황 보고</a>
+					<a href="/statisticsDailyStatusTab02.html" class="button">점검 제외</a>
+					<a href="/statisticsDailyStatusTab03.html" class="button active">점검 내역</a>
+				</div>
+			</div>
+			<div class="main-body">
+				<div class="card col-1">
+					<div class="card-body">
+						<div class="common-head-group">
+							<div class="title-group">
+								<h6 class="title">조회결과 n건</h6>
+							</div>
+							<div class="common-item-group">
+								<div class="select">
+									<select name="" id="">
+										<option value="" selected>10개씩 보기</option>
+										<option value="">20개씩 보기</option>
+										<option value="">30개씩 보기</option>
+										<option value="">40개씩 보기</option>
+										<option value="">50개씩 보기</option>
+									</select>
+								</div>
+								<div class="input-connect-group">
+									<label for="" class="label">기준 일자</label>
+									<input type="text" class="input datepicker datepicker-size" readonly />
+								</div>
+								<div class="select-labeled">
+									<label for="" class="label">지역</label>
+									<div class="select">
+										<select name="" id="">
+											<option value="" selected>전체</option>
+											<option value="">지역01</option>
+											<option value="">지역02</option>
+											<option value="">지역03</option>
+											<option value="">지역04</option>
+											<option value="">지역05</option>
+										</select>
+									</div>
+								</div>
+								<div class="select-labeled">
+									<label for="" class="label">블록 구분</label>
+									<div class="select">
+										<select name="" id="">
+											<option value="" selected>전체</option>
+											<option value="">블록01</option>
+											<option value="">블록02</option>
+											<option value="">블록03</option>
+											<option value="">블록04</option>
+											<option value="">블록05</option>
+										</select>
+									</div>
+								</div>
+								<button type="button" class="button box border hv-bg">
+									<img src="/images/icon/excel.svg" alt="엑셀저장" class="icon filter-none" /> 엑셀저장
+								</button>
+								<button type="button" class="button box border hv-bg">
+									<img src="/images/icon/search.svg" alt="조회" class="icon" /> 조회
+								</button>
+							</div>
+						</div>
+						<div class="table table-hover border border-right border-top mt-16">
+							<table>
+								<thead>
+									<tr>
+                                        <th rowspan="2" colspan="1" class="align-center">번호</th>
+                                        <th rowspan="2" colspan="1" class="align-center">지역</th>
+                                        <th rowspan="2" colspan="1" class="align-center">블록명(구)</th>
+                                        <th rowspan="2" colspan="1" class="align-center">구분</th>
+                                        <th rowspan="2" colspan="1" class="align-center">안전계수(%)</th>
+                                        <th rowspan="1" colspan="2" class="align-center">점검내역</th>
+                                    </tr>
+									<tr>
+										<th class="align-center">점검원인</th>
+										<th class="align-center">조치내역</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+                                        <td class="align-center">1</td>
+                                        <td class="align-center">동구</td>
+                                        <td class="align-center">
+											<span class="badge badge-success">D03</span>
+										</td>
+                                        <td class="align-center">점검 내역</td>
+                                        <td class="align-center">120</td>
+                                        <td>야간 최저유량 임계치(160.43% / 150%) 초과</td>
+                                        <td class="align-center">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="align-center">2</td>
+                                        <td class="align-center">동구</td>
+                                        <td class="align-center">
+											<span class="badge badge-success">D61</span>
+										</td>
+                                        <td class="align-center">점검 내역</td>
+                                        <td class="align-center">120</td>
+                                        <td>
+                                            전일대비 일 유입량 안전계수[기본](120) 초과
+                                            <br />
+                                            야간 최저유량 임계치(226.45% / 150%) 초과
+                                        </td>
+                                        <td class="align-center">-</td>
+                                    </tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="table-bottom-group">
+							<div class="pagination right">
+								<button type="button" class="prev" data-label="이전"></button>
+								<div>
+									<button type="button" class="active">1</button>
+									<button type="button">2</button>
+									<button type="button">3</button>
+									<button type="button">4</button>
+									<button type="button">5</button>
+								</div>
+								<button type="button" class="next" data-label="다음"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- main end -->
+
+	<!-- userSettingPanel -->
+	<div id="userSettingPanel" class="sidebar"></div>
+	<!-- userSettingPanel end -->
+
+	<!-- script -->
+	<script src="/js/common.js"></script>
+	<script src="/js/datepicker.js"></script>
+
+</body>
+</html>
