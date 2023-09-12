@@ -3275,6 +3275,24 @@ main .main-wrap .main-body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.login .login-content .login-form .checkbox input:checked ~ label {
+  color: var(--primary-color);
+}
+
+.login .login-content .login-form .checkbox input:checked ~ label::before {
+  background-color: var(--primary-color);
+}
+
+.login .login-content .login-form .checkbox label {
+  font-weight: 500;
+}
+
+.login .login-content .login-form .checkbox label::before {
+  border-radius: 50%;
+  background-color: transparent;
 }
 
 /* login end */

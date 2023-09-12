@@ -2579,6 +2579,31 @@ main {
                 padding: 1.6rem;
                 text-align: center;
                 justify-content: center;
+                margin-top: 1.2rem;
+            }
+
+            .checkbox {
+
+                input {
+                    &:checked {
+                        & ~ label {
+                            color: var(--primary-color);
+                            
+                            &::before {
+                                background-color: var(--primary-color);
+                            }
+                        }
+                    }
+                }
+
+                label {
+                    font-weight: 500;
+
+                    &::before {
+                        border-radius: 50%;
+                        background-color: transparent;
+                    }
+                }
             }
         }
     }
