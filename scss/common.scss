@@ -59,6 +59,9 @@
     --button-text-color: #596172;
     --button-border-color: #848fa7;
 
+    --primary-button-hover-color: #396aff;
+    --primary-button-active-color: #5b84ff;
+
     --tooltip-text-color: #fff;
     --tooltip-background-color: #4473FC;
 
@@ -1231,6 +1234,20 @@ body {
 
         &:hover {
             box-shadow: var(--box-shadow-hover);
+        }
+    }
+
+    &.button-primary {
+        color: var(--primary-contrast-text-color);
+        background-color: var(--primary-color);
+        transition: background-color var(--speed);
+
+        &:hover {
+            background-color: var(--primary-button-hover-color);
+        }
+
+        &:active {
+            background-color: var(--primary-button-active-color);
         }
     }
     
@@ -2470,6 +2487,103 @@ main {
     }
 }
 /* main end */
+
+/* login */
+.login {
+    @include parent();
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.4rem;
+
+    &.background {
+        background: url(../images/login_bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        .login-content {
+            background-color: rgba($color: #ffffff, $alpha: .95);
+
+            &:hover {
+                background-color: var(--box-color);
+            }
+        }
+    }
+
+    .login-content {
+        @include parent();
+        max-width: 48rem;
+        margin: 0 auto;
+        padding: 4.8rem 3.2rem;
+        background-color: var(--box-color);
+        border-radius: 12px;
+        box-shadow: var(--box-shadow);
+        transition: background var(--speed), box-shadow var(--speed);
+
+        &:hover {
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .logo {
+            width: 17.2rem;
+            margin: 0 auto;
+        }
+
+        .login-form {
+            @include parent();
+            margin-top: 2.4rem;
+
+            .input-connect-group {
+                margin-bottom: 1.2rem;
+                border: 1px solid var(--border-color);
+                border-radius: 12px;
+                transition: border-color var(--speed);
+                flex-wrap: nowrap!important;
+
+                &:focus-within {
+                    border-color: var(--primary-color);
+
+                    .label {
+                        color: var(--primary-color);
+                    }
+                }
+
+                .label,
+                .input {
+                    border: none;
+                    background-color: transparent;
+                    font-size: 1.6rem;
+                    padding: 0 1.6rem;
+                }
+
+                .label {
+                    width: 9.6rem;
+                    min-width: 9.6rem;
+                    font-weight: 600;
+                    color: var(--text-light-color);
+                    transition: color var(--speed);
+                }
+
+                .input {
+                    min-height: 6rem;
+                }
+            }
+
+            .button {
+                width: 100%;
+                min-height: 6.4rem;
+                font-size: 1.6rem;
+                border-radius: 12px;
+                padding: 1.6rem;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+/* login end */
 
 /* media(max-width: 1199px) */
 @media(max-width: 1199px) {

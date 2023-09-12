@@ -44,6 +44,8 @@
   --chart-border-black: rgba(0, 0, 0, .4);
   --button-text-color: #596172;
   --button-border-color: #848fa7;
+  --primary-button-hover-color: #396aff;
+  --primary-button-active-color: #5b84ff;
   --tooltip-text-color: #fff;
   --tooltip-background-color: #4473FC;
   --table-border-color: #e2eaf1;
@@ -1652,6 +1654,21 @@ body.snb-min-mode main {
           box-shadow: var(--box-shadow-hover);
 }
 
+.button.button-primary {
+  color: var(--primary-contrast-text-color);
+  background-color: var(--primary-color);
+  -webkit-transition: background-color var(--speed);
+  transition: background-color var(--speed);
+}
+
+.button.button-primary:hover {
+  background-color: var(--primary-button-hover-color);
+}
+
+.button.button-primary:active {
+  background-color: var(--primary-button-active-color);
+}
+
 .button.button-danger {
   color: var(--danger-color) !important;
 }
@@ -3145,6 +3162,122 @@ main .main-wrap .main-body {
 }
 
 /* main end */
+/* login */
+.login {
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2.4rem;
+}
+
+.login.background {
+  background: url(../images/login_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.login.background .login-content {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.login.background .login-content:hover {
+  background-color: var(--box-color);
+}
+
+.login .login-content {
+  width: 100%;
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 4.8rem 3.2rem;
+  background-color: var(--box-color);
+  border-radius: 12px;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  -webkit-transition: background var(--speed), -webkit-box-shadow var(--speed);
+  transition: background var(--speed), -webkit-box-shadow var(--speed);
+  transition: background var(--speed), box-shadow var(--speed);
+  transition: background var(--speed), box-shadow var(--speed), -webkit-box-shadow var(--speed);
+}
+
+.login .login-content:hover {
+  -webkit-box-shadow: var(--box-shadow-hover);
+          box-shadow: var(--box-shadow-hover);
+}
+
+.login .login-content .logo {
+  width: 17.2rem;
+  margin: 0 auto;
+}
+
+.login .login-content .login-form {
+  width: 100%;
+  position: relative;
+  margin-top: 2.4rem;
+}
+
+.login .login-content .login-form .input-connect-group {
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  -webkit-transition: border-color var(--speed);
+  transition: border-color var(--speed);
+  -ms-flex-wrap: nowrap !important;
+      flex-wrap: nowrap !important;
+}
+
+.login .login-content .login-form .input-connect-group:focus-within {
+  border-color: var(--primary-color);
+}
+
+.login .login-content .login-form .input-connect-group:focus-within .label {
+  color: var(--primary-color);
+}
+
+.login .login-content .login-form .input-connect-group .label,
+.login .login-content .login-form .input-connect-group .input {
+  border: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+  padding: 0 1.6rem;
+}
+
+.login .login-content .login-form .input-connect-group .label {
+  width: 9.6rem;
+  min-width: 9.6rem;
+  font-weight: 600;
+  color: var(--text-light-color);
+  -webkit-transition: color var(--speed);
+  transition: color var(--speed);
+}
+
+.login .login-content .login-form .input-connect-group .input {
+  min-height: 6rem;
+}
+
+.login .login-content .login-form .button {
+  width: 100%;
+  min-height: 6.4rem;
+  font-size: 1.6rem;
+  border-radius: 12px;
+  padding: 1.6rem;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* login end */
 /* media(max-width: 1199px) */
 @media (max-width: 1199px) {
   .card.col-4 {
