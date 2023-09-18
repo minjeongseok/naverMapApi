@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ko">
+<head>
+
+	<title>상수도사업본부 유량통합관리시스템</title>
+
+	<meta charset="utf-8" />
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+
+	<meta property="og:url" content="https://flowunity.netlify.app" />
+	<meta property="og:title" content="상수도사업본부 유량통합관리시스템" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://flowunity.netlify.app/images/og_img.png" />
+	<meta property="og:description" content="상수도사업본부 유량통합관리시스템" />
+
+    <link rel="icon" href="/images/favicon/favicon_32.png" sizes="32x32" />
+	<link rel="icon" href="/images/favicon/favicon_64.png" sizes="64x64" />
+	<link rel="icon" href="/images/favicon/favicon_128.png" sizes="128x128" />
+	<link rel="icon" href="/images/favicon/favicon_152.png" sizes="152x152" />
+
+	<link href="/css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="/css/fonts.css" rel="stylesheet" type="text/css" />
+	<link href="/css/common.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+	<!-- header -->
+	<header></header>
+	<!-- header end -->
+
+	<!-- snb -->
+	<nav class="snb"></nav>
+	<!-- snb end -->
+
+	<!-- main -->
+	<main>
+		<div class="main-wrap">
+			<div class="main-head">
+                <div class="common-head-group">
+                    <div class="title-group">
+                        <p>유량계관리</p>
+                        <h2>유량계 통신 정보</h2>
+                    </div>
+                    <div class="common-item-group">
+                        <button type="button" class="button button-danger box border hv-bg">
+                            <img src="/images/icon/reset.svg" alt="수집 프로그램 재시작" class="icon" /> 수집 프로그램 재시작
+                        </button>
+                        <button type="button" class="button button-success box border hv-bg">
+                            <img src="/images/icon/reset.svg" alt="새로고침" class="icon" /> 새로고침
+                        </button>
+                    </div>
+                </div>
+			</div>
+			<div class="main-body">
+                <div class="card col-2">
+					<div class="card-head">
+                        <div class="common-head-group">
+                            <div class="title-group">
+                                <h6 class="title">데이터 수신상태</h6>
+                            </div>
+                            <span class="badge badge-success">2023-09-14 17:24 기준</span>
+                        </div>
+					</div>
+					<div class="card-body">
+						<div class="chart-wrap" style="max-width: 30rem;">
+							<canvas id="dataCommChart" class="chart"></canvas>
+						</div>
+						<div class="table border-top mt-24">
+							<table>
+								<tbody>
+                                    <tr>
+										<td>총 유량계</td>
+										<td class="align-right">230</td>
+									</tr>
+                                    <tr>
+										<td>최근 5분간 데이터 미수신</td>
+										<td class="align-right">12</td>
+									</tr>
+                                    <tr>
+										<td>최근 10분간 데이터 미수신</td>
+										<td class="align-right">22</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="flex-group gap-6">
+												<span class="circle circle-success"></span>
+												<span>정상</span>
+												<span class="badge badge-success">+6%</span>
+											</div>
+										</td>
+										<td class="align-right">190</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="flex-group gap-6">
+												<span class="circle circle-warning"></span>
+												<span>배터리이상</span>
+												<span class="badge badge-warning">-10%</span>
+											</div>
+										</td>
+										<td class="align-right">30</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="flex-group gap-6">
+												<span class="circle circle-danger"></span>
+												<span>고장</span>
+												<span class="badge badge-danger">-4%</span>
+											</div>
+										</td>
+										<td class="align-right">10</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+                <div class="card col-2">
+					<div class="card-head">
+                        <div class="common-head-group">
+                            <div class="title-group">
+                                <h6 class="title">메모리상태</h6>
+                            </div>
+                            <span class="badge badge-success">2023-09-14 17:24 기준</span>
+                        </div>
+					</div>
+					<div class="card-body">
+						<div class="chart-wrap" style="max-width: 30rem;">
+							<canvas id="memoryChart" class="chart"></canvas>
+                            <p id="memoryChartPercentage" class="half-doughnut-chart-inner-text color-warning">42%</p>
+						</div>
+                        <div class="scroll-wrap">
+                            <div id="memoryChartTab" class="tab ui-2">
+                                <button type="button" class="button active" onclick="memoryChartDataSet(this, memoryChartData01, 'memoryChartDataTable01');">Heap</button>
+                                <button type="button" class="button" onclick="memoryChartDataSet(this, memoryChartData02, 'memoryChartDataTable02');">Non-Heap</button>
+                                <button type="button" class="button" onclick="memoryChartDataSet(this, memoryChartData03, 'memoryChartDataTable03');">Processor</button>
+                            </div>
+                        </div>
+						<div id="memoryChartDataTableWrap" class="table border-top mt-24">
+							<table id="memoryChartDataTable01">
+								<tbody>
+                                    <tr>
+										<td>초기 메모리</td>
+										<td class="align-right">512MB</td>
+									</tr>
+                                    <tr>
+										<td>현재 메모리</td>
+										<td class="align-right">10MB</td>
+									</tr>
+                                    <tr>
+										<td>최대 메모리</td>
+										<td class="align-right">7,271MB</td>
+									</tr>
+								</tbody>
+							</table>
+                            <table id="memoryChartDataTable02" style="display: none;">
+								<tbody>
+                                    <tr>
+										<td>초기 메모리</td>
+										<td class="align-right">2MB</td>
+									</tr>
+                                    <tr>
+										<td>현재 메모리</td>
+										<td class="align-right">6MB</td>
+									</tr>
+                                    <tr>
+										<td>최대 메모리</td>
+										<td class="align-right">0MB</td>
+									</tr>
+								</tbody>
+							</table>
+                            <table id="memoryChartDataTable03" style="display: none;">
+								<tbody>
+                                    <tr>
+										<td>사용 가능한 프로세서 수</td>
+										<td class="align-right">16</td>
+									</tr>
+                                    <tr>
+										<td>총 물리적 메모리</td>
+										<td class="align-right">32,717MB</td>
+									</tr>
+                                    <tr>
+										<td>최대 메모리</td>
+										<td class="align-right">16,724MB</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+                        <div class="flex-group justify-center mt-24">
+                            <button type="button" class="button button-danger box box-transparent border hv-bg">
+                                <img src="/images/icon/reset.svg" alt="Garbage Collector" class="icon" /> Garbage Collector
+                            </button>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- main end -->
+
+	<!-- userSettingPanel -->
+	<div id="userSettingPanel" class="sidebar"></div>
+	<!-- userSettingPanel end -->
+
+	<!-- script -->
+	<script src="/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+	<script src="/js/chartAssist.js"></script>
+
+    <script>
+
+		// 데이터 수신상태 차트
+		var dataCommChartArea = document.getElementById('dataCommChart').getContext('2d');
+		var dataCommChart = new Chart(dataCommChartArea, {
+			type: 'doughnut',
+			data: {
+				labels: ['정상', '배터리이상', '고장'],
+				datasets: [{
+					label: '데이터 수신상태 차트',
+					data: [190, 30, 10],
+					backgroundColor: [
+						chartColorPalette.green,
+						chartColorPalette.orange,
+						chartColorPalette.red,
+					],
+					borderColor: [
+						chartColorPalette.greenBorder,
+						chartColorPalette.orangeBorder,
+						chartColorPalette.redBorder,
+					],
+					borderWidth: 2,
+				}],
+			},
+			options: {
+				plugins: {
+					legend: false,
+				},
+			}
+		});
+
+        // 메모리 상태 차트 데이터 값
+        var memoryChartData01 = [42, 58]; // Heap
+        var memoryChartData02 = [10, 90]; // Non-Heap
+        var memoryChartData03 = [20, 80]; // Processor
+
+        // 메모리 상태 차트
+		var memoryChartArea = document.getElementById('memoryChart').getContext('2d');
+		var memoryChart = new Chart(memoryChartArea, {
+			type: 'doughnut',
+			data: {
+				datasets: [{
+					data: memoryChartData01,
+					backgroundColor: [
+						chartColorPalette.yellowBorder,
+						"#f0f0f0",
+					],
+				}],
+			},
+			options: {
+				plugins: {
+					legend: false,
+                    tooltip: false,
+				},
+                hover: false,
+                rotation: -90,
+				circumference: 180,
+			}
+		});
+
+        // 메모리 상태 차트 탭
+        function memoryChartDataSet(button, memoryChartData, memoryChartDataTable) {
+
+            // 버튼 관련
+            $this = $(button);
+
+            $this.parent(".tab").children(".button").removeClass("active");
+            $this.addClass("active");
+
+            // 테이블 관련
+            $("#memoryChartDataTableWrap").children("table").hide();
+            $table = $("#" + memoryChartDataTable);
+            $table.show();
+            
+            // 차트 관련
+            memoryChart.data.datasets[0].data = memoryChartData // 데이터 변경
+            memoryChart.update(); // 차트 업데이트
+
+            $("#memoryChartPercentage").text(memoryChartData[0] + "%"); // 데이터 퍼센티지 변경
+
+        }
+
+    </script>
+
+</body>
+</html>

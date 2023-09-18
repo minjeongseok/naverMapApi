@@ -20,8 +20,6 @@ var chartColorPalette = {
 	orangeBorder: getComputedStyle(document.documentElement).getPropertyValue('--chart-border-orange'),
 	blackBorder: getComputedStyle(document.documentElement).getPropertyValue('--chart-border-black'),
 
-	
-
     success: getComputedStyle(document.documentElement).getPropertyValue('--success-color'),
     warning: getComputedStyle(document.documentElement).getPropertyValue('--warning-color'),
     danger: getComputedStyle(document.documentElement).getPropertyValue('--danger-color'),
