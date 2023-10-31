@@ -1,31 +1,92 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
 
-	<title>상수도사업본부 유량통합관리시스템</title>
+    <title></title>
 
-	<meta charset="utf-8" />
-	
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
 
-	<meta property="og:url" content="https://flowunity.netlify.app" />
-	<meta property="og:title" content="상수도사업본부 유량통합관리시스템" />
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="https://flowunity.netlify.app/images/og_img.png" />
-	<meta property="og:description" content="상수도사업본부 유량통합관리시스템" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link rel="icon" href="/images/favicon/favicon_32.png" sizes="32x32" />
-	<link rel="icon" href="/images/favicon/favicon_64.png" sizes="64x64" />
-	<link rel="icon" href="/images/favicon/favicon_128.png" sizes="128x128" />
-	<link rel="icon" href="/images/favicon/favicon_152.png" sizes="152x152" />
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/fonts.css" rel="stylesheet" type="text/css" />
+    <link href="/css/common.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
+
 <body>
 
-	<script>
-		location.href = "/dashboardCollection.html";
-	</script>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div id="lottie_1"></div>
+            </div>
+            <div class="swiper-slide">
+                <div id="lottie_2"></div>
+            </div>
+            <div class="swiper-slide">
+                <div id="lottie_3"></div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
 
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+<script>
+
+    var swiper = new Swiper(".mySwiper", {
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        on: {
+            slideChange: function() {
+                lottie_1.stop();
+                lottie_1.play();
+
+                lottie_2.stop();
+                lottie_2.play();
+
+                lottie_3.stop();
+                lottie_3.play();
+            }
+        }
+    });
+
+    let lottie_1 = bodymovin.loadAnimation({
+        container : document.getElementById('lottie_1'),
+        renderer : 'svg',
+        loop : false,
+        autoplay : true,
+        path: 'https://lottie.host/8963a3bd-1567-496c-93df-a6262ee427a3/cYxMl5Eott.json'
+    });
+
+    let lottie_2 = bodymovin.loadAnimation({
+        container : document.getElementById('lottie_2'),
+        renderer : 'svg',
+        loop : false,
+        autoplay : true,
+        path: 'https://lottie.host/bfa77b83-04fd-4442-8582-14f1fdd06556/Y1r4CK4kss.json'
+    });
+
+    let lottie_3 = bodymovin.loadAnimation({
+        container : document.getElementById('lottie_3'),
+        renderer : 'svg',
+        loop : false,
+        autoplay : true,
+        path: 'https://lottie.host/6c503506-abb7-4087-b629-e3ca803464a2/xNe6wdzSEg.json'
+    });
+    
+</script>
+
 </html>

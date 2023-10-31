@@ -4,7 +4,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-
 *::after, *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -23,10 +22,9 @@ ol,
 ul {
   list-style: none;
 }
-
 ol::after,
 ul::after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -64,7 +62,6 @@ input {
   outline: none;
   border-radius: 0;
 }
-
 input::-ms-clear {
   display: none;
 }
@@ -76,7 +73,6 @@ select {
   outline: none;
   border-radius: 0;
 }
-
 select::-ms-expand {
   display: none;
 }
